@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP7KLG03D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BP7KLG03D6');
+</script>
+
+    
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,7 +106,7 @@
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
             max-width: 600px; /* Adjust the width as needed */
-            height: 250px;
+            height: 265px;
         }
 
 
@@ -198,18 +210,13 @@ body {
         </div>
 
         <div class="left-content">
-            <img src="explot.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="explore.html"><span class="left-text">Explore</span></a>
+            <img src="Concact.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
+            <a href="contact.html"><span class="left-text">Contact</span></a>
         </div>
 
         <!-- More navbar content here... -->
     </div>
-    <div class="left-banner">
-        <img src="banners.png" alt="Left Banner" class="banner-image">
-    </div>
-    <div class="right-banner">
-        <img src="banners.png" alt="Right Banner" class="banner-image">
-    </div>
+
     <div class="info-boks">
         <div class="info-title">Level Calculator Info</div>
         <p></p>
@@ -231,7 +238,7 @@ body {
             <label for="accountYears">Account Years:</label>
             <input type="number" id="accountYears" name="accountYears" value=""><br>
     
-            <label for="badges">Badges:</label>
+            <label for="badges">Official Roblox Badges:</label>
             <input type="number" id="badges" name="badges" value=""><br>
     
             <label for="friends">Friends:</label>
@@ -250,6 +257,8 @@ body {
         </form>
     
         <div id="resultat"></div>
+
+        <a href="https://roblox.com/users/profile">Add to profile</a>
     
         <script>
             function beregnResultat() {
@@ -269,6 +278,8 @@ body {
     
                 // Vis resultatet på siden
                 document.getElementById("resultat").innerHTML = "Your level is: " + result;
+                
+                
             }
         </script>
         </p>
@@ -277,10 +288,11 @@ body {
 
 
     <footer>
-        <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
+        <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
         <a href="rules.html">Roblogs Guidelines</a></p>
         <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
         <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
       </footer>
+
 </body>
 </html>
