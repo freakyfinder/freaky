@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP7KLG03D6"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJV28T664W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-BP7KLG03D6');
+  gtag('config', 'G-RJV28T664W');
 </script>
     
     <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -38,7 +38,8 @@
             margin-top: -4.0cm; /* Flyt logoet lidt op for at reducere afstanden til navigationen */
         }
 
-        .navbar {
+        /* Center the navbar and create equal space on both sides */
+.navbar {
     background-color: rgb(255, 0, 0);
     height: 1cm;
     display: flex;
@@ -49,9 +50,11 @@
     margin: 0 auto; /* Center the navbar horizontally */
 }
 
+
+
+        /* Optional: Adjust button styling for better alignment */
         .navbar-text {
-            color: white;
-            font-size: 20px;
+            padding: 10px; /* Add some padding to the buttons for spacing */
         }
 
         /* Juster margen til de midterste tekster */
@@ -82,51 +85,79 @@
             background-color: red;
             color: white;
             font-size: 24px;
-            padding: 5px;
+            padding: 3px;
         }
 
+        .welcome-title {
+            background-color: red;
+            color: white;
+            font-size: 30px;
+            padding: 3px;
+        }
 
-        footer {
-  text-align: center;
-  padding: 3px;
-  background-color: rgb(255, 0, 0);
-  color: white;
+        .info-box {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin: 75px auto; /* Juster marginen, hvis nødvendigt */
+    padding: 0px;
+    width: 500px; /* Juster bredden efter behov */
+    height: 1125px; /* Juster højden efter behov */
+}
+
+.info-box-left {
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    margin: 75px auto; /* Juster marginen, hvis nødvendigt */
+    padding: 0px;
+    width: 333px; /* Juster bredden efter behov */
+    height: 1075px; /* Juster højden efter behov */
 }
 
 
         .info-boks {
-            text-align: left;
-            background-color: rgb(255, 255, 255);
+            text-align: center;
+            background-color: rgb(0, 0, 0);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 750px; /* Adjust the width as needed */
-            height: 1200px;
+            max-width: 600px; /* Adjust the width as needed */
+            height: 375px;
         }
 
-        .info-bokss {
+        .info-box5 {
             text-align: center;
             background-color: rgb(255, 255, 255);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 1000px; /* Adjust the width as needed */
-            height: 450px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 375px;
         }
 
-        .info-boksi {
-            text-align: left;
+        .info-boksssi {
+            text-align: center;
             background-color: rgb(255, 255, 255);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 750px; /* Adjust the width as needed */
-            height: 323px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 375px;
         }
 
-
-        .navbar a {
-            text-decoration: none; /* Fjern understregning */
-            color: white; /* Indstil farve på linktekst efter behov */
+        .info-blogpost {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 425px;
         }
 
+        .info-newspost {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 250px;
+        }
 
         .left-banner,
         .right-banner {
@@ -153,10 +184,26 @@
         }
 
 
+        .navbar a {
+            text-decoration: none; /* Fjern understregning */
+            color: white; /* Indstil farve på linktekst efter behov */
+        }
+
+
         .info-boks img {
     max-width: 600px; /* Juster bredden efter dine præferencer */
     max-height: 600px; /* Juster højden efter dine præferencer */
 }
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
+
+
 
 
 
@@ -186,7 +233,7 @@ body {
 
         <div class="left-content">
             
-            <a href="games.html"><span class="left-text">Games</span></a>
+            <a href="games.html"><span class="left-text"><b>Games</b></span></a>
         </div>
 
         
@@ -194,7 +241,7 @@ body {
 
         <div class="left-content">
             
-            <a href="userlist.html"><span class="left-text"><b>People</b></span></a>
+            <a href="userlist.html"><span class="left-text">People</span></a>
         </div>
 
         
@@ -250,73 +297,37 @@ body {
         <!-- More navbar content here... -->
     </div>
 
-
-    <div class="info-boks">
-        <div class="info-title">First 20 Users</div>
-        <p>&nbsp; This is a list of the first 20 users. Typically referred to as <b>Jr. Users</b>.</p>
-        <!-- You can add an image/banner here -->
-        
-        <p> &nbsp;1. <a href="https://www.roblox.com/users/18177593/profile">freakyfinder</a> - [<span style="color: rgb(255,0,0);">Founder</span>]</p>
-        <hr>
-        <p> &nbsp;2. <a href="https://www.roblox.com/users/3772093/profile">insaneshane</a> - [<span style="color: rgb(255,0,0);">Co-Founder</span>]</p>
-        <hr>
-        <p> &nbsp;3. <a href="https://www.roblox.com/users/1555289964/profile">lagkagewille</a> - [<span style="color: rgb(255, 0, 212);">Contributor</span>]</p>
-        <hr>
-        <p> &nbsp;4. <a href="https://www.roblox.com/users/1297648610/profile">seb7490gur</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;5. <a href="https://www.roblox.com/users/1137499098/profile">lauge100danmark</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;6. <a href="https://www.roblox.com/users/82453476/profile">Neximation0</a> - [<span style="color: rgb(157, 96, 255);">Partner</span>]</p>
-        <hr>
-        <p> &nbsp;7. <a href="https://www.roblox.com/users/545103771/profile">SaturnKOT</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;8. <a href="https://www.roblox.com/users/780381233/profile">plspets</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;9. <a href="https://www.roblox.com/users/2963432332/profile">midcases</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;10. <a href="https://www.roblox.com/users/14946581/profile">XTokios</a> - [<span style="color: rgb(157, 96, 255);">Partner</span>]</p>
-        <hr>
-        <p> &nbsp;11. <a href="https://www.roblox.com/users/472414439/profile">jltred</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;12. <a href="https://www.roblox.com/users/1174349838/profile">HimothyHall</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;13. <a href="https://www.roblox.com/users/4336653088/profile">GoreBlood10012</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;14. <a href="https://www.roblox.com/users/3157944173/profile">Spekren</a> - [<span style="color: rgb(255, 208, 0);">Moderator</span>]</p>
-        <hr>
-        <p> &nbsp;15. <a href="https://www.roblox.com/users/1387869536/profile">xslayer2153</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;16. <a href="">RIZZ</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;17. <a href="https://www.roblox.com/users/1204310565/profile">luki75764</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;18. <a href="https://www.roblox.com/users/203185959/profile">Booms3rdAcc</a> - [<span style="color: rgb(0, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;19. <a href="https://www.roblox.com/users/781942763/profile">Boghvede</a> - [<span style="color: rgb(10, 0, 0);">User</span>]</p>
-        <hr>
-        <p> &nbsp;20. <a href="https://www.roblox.com/users/812610431/profile">ZebraAgentLight</a> - [<span style="color: rgb(255, 208, 0);">Moderator</span>]</p>
+    <div class="info-box">
+        <div class="info-title">Discover Old Games</div>
+        <p>Page 1 of 2 <a href="games2.html">Next >></a></p>
+        <p><a href="https://www.roblox.com/games/487316/Sword-Fight-on-the-Heights-Original" style="float: center;">
+            <img src="sfoth.png" alt="sfoth" style="width: 250px;">
+        </a> </p>
+        <p style="font-size: 15px;"><a href="https://www.roblox.com/games/487316/Sword-Fight-on-the-Heights-Original">Sword Fight on the Heights Original</a></p>
+        <p style="font-size: 13px;"><b>Creator: </b><a href="https://www.roblox.com/users/261/profile/">Shedletsky</a></p>
 
 
+        <p><a href="https://www.roblox.com/games/47324/Sword-Fights-on-the-Heights-IV" style="float: center;">
+            <img src="sfothiv.png" alt="sfothiv" style="width: 250px;">
+        </a> </p>
+        <p style="font-size: 15px;"><a href="https://www.roblox.com/games/47324/Sword-Fights-on-the-Heights-IV">Sword Fight on the Heights IV</a></p>
+        <p style="font-size: 13px;"><b>Creator: </b><a href="https://www.roblox.com/users/261/profile/">Shedletsky</a></p>
+
+        <p><a href="https://www.roblox.com/games/189707/Natural-Disaster-Survival" style="float: center;">
+            <img src="nds.png" alt="nds" style="width: 250px;">
+        </a> </p>
+        <p style="font-size: 15px;"><a href="https://www.roblox.com/games/189707/Natural-Disaster-Survival">Natural Disaster Survival</a></p>
+        <p style="font-size: 13px;"><b>Creator: </b><a href="https://www.roblox.com/users/80254/profile/">Stickmasterluke</a></p>
+
+        <p><a href="https://www.roblox.com/games/4068198/Jet-Wars-Advanced-Battle#ropro-quick-search" style="float: center;">
+            <img src="jwab.png" alt="jwab" style="width: 250px;">
+        </a> </p>
+        <p style="font-size: 15px;"><a href="https://www.roblox.com/games/4068198/Jet-Wars-Advanced-Battle#ropro-quick-search">Jet Wars: Advanced Battle</a></p>
+        <p style="font-size: 13px;"><b>Creator: </b><a href="https://www.roblox.com/users/813527/profile/">Carbon131</a></p>
+
+        <p style="font-size: 18px;">Want to put a game on this page? <a href="https://forms.gle/R77EZdTmT3ecCcvf6">Submit here!</a></p>
+    </div>  
     
-    </div>
-
-    <div class="info-boksi">
-        <div class="info-title">Staff Users</div>
-        <p></p>
-        <!-- You can add an image/banner here -->
-        
-        <p> &nbsp;<a href="https://www.roblox.com/users/18177593/profile">freakyfinder</a> - [<span style="color: rgb(255, 208, 0);">Admin</span>]</p>
-        <hr>
-        <p> &nbsp;<a href="https://www.roblox.com/users/3772093/profile">insaneshane</a> - [<span style="color: rgb(255, 208, 0);">Admin</span>]</p>
-        <hr>
-        <p> &nbsp;<a href="https://www.roblox.com/users/3157944173/profile">Spekren</a> - [<span style="color: rgb(255, 208, 0);">Moderator</span>]</p>
-        <hr>
-        <p> &nbsp;<a href="https://www.roblox.com/users/812610431/profile">ZebraAgentLight</a> - [<span style="color: rgb(255, 208, 0);">Moderator</span>]</p>
-        <hr>
-        <p>&nbsp; Apply for staff <a href="https://forms.gle/fin84TM8Bw2H3bgN6">here!</a></p>
-    
-    </div>
-
 
     <footer>
         <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>

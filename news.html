@@ -40,13 +40,15 @@
         }
 
         .navbar {
-            background-color: red;
-            height: 1cm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+    background-color: rgb(255, 0, 0);
+    height: 1cm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 50%; /* Set the maximum width to make it centered */
+    margin: 0 auto; /* Center the navbar horizontally */
+}
 
         .navbar-text {
             color: white;
@@ -157,6 +159,15 @@
             height: 225px;
         }
 
+        .info-box7 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 450px;
+        }
+
         .left-banner,
         .right-banner {
             position: fixed;
@@ -211,55 +222,82 @@ body {
 </head>
 <body>
     <div class="header">
-        <img src="Roblogs_Paintball_Tournament_Banner1.png" alt="Logo" class="logo"> <!-- Erstat 'roblogs_LOGO.png' med stien til dit hovedlogo -->
+        <a href="index.html">
+            <img src="RoblogsBanner2.png" alt="Logo" class="logo" style="max-width: 100%;">
+        </a>
     </div>
     <div class="navbar">
+    
+    
 
         <div class="left-content">
-            <img src="login.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="index.html"><span class="left-text">Home</span></a>
+            <a href="myroblogs.html"><span class="left-text">My ROBLOGS</span></a>
+        </div>
+        
+        
+
+        <div class="left-content">
+            
+            <a href="games.html"><span class="left-text">Games</span></a>
         </div>
 
+        
+       
+
         <div class="left-content">
-            <img src="Blog_knap.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
+            
+            <a href="userlist.html"><span class="left-text">People</span></a>
+        </div>
+
+        
+        
+
+        <div class="left-content">
+            
+            <a href="forum.html"><span class="left-text">Forum</span></a>
+        </div>
+
+        
+       
+
+        <div class="left-content">
+            
+            <a href="news.html"><span class="left-text"><b>News</b></span></a>
+        </div>
+
+        
+     
+
+        <div class="left-content">
+            
             <a href="blog.html"><span class="left-text">Blog</span></a>
         </div>
 
+        
+     
+
         <div class="left-content">
-            <img src="Png2.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
+            
+            <a href="lvlcalculator.html"><span class="left-text">Level</span></a>
+        </div>
+
+        
+       
+
+        <div class="left-content">
+            
             <a href="events.html"><span class="left-text">Events</span></a>
+
         </div>
 
-        <div class="left-content">
-            <img src="Level_Calculator.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="lvlcalculator.html"><span class="left-text">Level Calculator</span></a>
-        </div>
+        
+       
 
         <div class="left-content">
-            <img src="Png.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="forum.html"><span class="left-text">Forums</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="userlist.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="userlist.html"><span class="left-text">User List</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="news1.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="news.html"><span class="left-text">News</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="rules.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
+            
             <a href="rules.html"><span class="left-text">Rules</span></a>
-
         </div>
 
-        <div class="left-content">
-            <img src="Concact.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="contact.html"><span class="left-text">Contact</span></a>
-        </div>
 
         <!-- More navbar content here... -->
     </div>
@@ -271,6 +309,18 @@ body {
         
         <p>We will post important announcements and news here, aswell as website Updates. Stay tuned for cool stuff!
         </p>
+    </div>
+
+    <div class="info-box7">
+        <div class="info-title">Site revamp!</div>
+        <p>Wednesday 27-09-2023
+        <p><b>Huge site revamp!</b></p>
+        <p>We completely revamped the site, to give the users a chance to experience Roblox, in its earliest era. We added a lot of cool features to the site too!</p>
+        <p>- Redesigned site, to look like the early Roblox site.</p>
+        <p>- We added a download page, for the oldest archived versions of Roblox (Roblox Clients). <a href="download.html">Download here!</a></p>
+        <p>- Added a new <a href="games.html">Games</a> page, where the best old Roblox games is displayed, for you to play. We will also add a category, for games, up for download in the old clients, but that will be an coming update.</p>
+        <p>- Added a lot of new pages, that will make it possible to really relive Roblox in its hayday.</p>
+        <p>- The big banner you see at the top, will be changed for every season. You can expect this to change when it's halloween, christmas, summer etc.</p>
     </div>
 
     <div class="info-box6">

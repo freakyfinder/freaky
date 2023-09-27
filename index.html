@@ -38,18 +38,23 @@
             margin-top: -4.0cm; /* Flyt logoet lidt op for at reducere afstanden til navigationen */
         }
 
-        .navbar {
-            background-color: red;
-            height: 1cm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+        /* Center the navbar and create equal space on both sides */
+.navbar {
+    background-color: rgb(255, 0, 0);
+    height: 1cm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 50%; /* Set the maximum width to make it centered */
+    margin: 0 auto; /* Center the navbar horizontally */
+}
 
+
+
+        /* Optional: Adjust button styling for better alignment */
         .navbar-text {
-            color: white;
-            font-size: 20px;
+            padding: 10px; /* Add some padding to the buttons for spacing */
         }
 
         /* Juster margen til de midterste tekster */
@@ -91,12 +96,12 @@
         }
 
         .info-box {
-    text-align: center;
+    text-align: left;
     background-color: rgb(255, 255, 255);
     margin: 75px auto; /* Juster marginen, hvis nødvendigt */
     padding: 0px;
     width: 1000px; /* Juster bredden efter behov */
-    height: 300px; /* Juster højden efter behov */
+    height: 670px; /* Juster højden efter behov */
 }
 
 
@@ -203,114 +208,115 @@ body {
 </head>
 <body>
     <div class="header">
-        <img src="Roblogs_Paintball_Tournament_Banner1.png" alt="Logo" class="logo"> <!-- Erstat 'roblogs_LOGO.png' med stien til dit hovedlogo -->
+        <a href="index.html">
+            <img src="RoblogsBanner2.png" alt="Logo" class="logo" style="max-width: 100%;">
+        </a>
     </div>
     <div class="navbar">
+    
+    
 
         <div class="left-content">
-            <img src="login.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="index.html"><span class="left-text">Home</span></a>
+            <a href="myroblogs.html"><span class="left-text">My ROBLOGS</span></a>
+        </div>
+        
+        
+
+        <div class="left-content">
+            
+            <a href="games.html"><span class="left-text">Games</span></a>
         </div>
 
-        <div class="left-content">
-            <img src="Blog_knap.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="blog.html"><span class="left-text">Blog</span></a>
-        </div>
+        
+       
 
         <div class="left-content">
-            <img src="Png2.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="events.html"><span class="left-text">Events</span></a>
+            
+            <a href="userlist.html"><span class="left-text">People</span></a>
         </div>
 
-        <div class="left-content">
-            <img src="Level_Calculator.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="lvlcalculator.html"><span class="left-text">Level Calculator</span></a>
-        </div>
+        
+        
 
         <div class="left-content">
-            <img src="Png.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="forum.html"><span class="left-text">Forums</span></a>
+            
+            <a href="forum.html"><span class="left-text">Forum</span></a>
         </div>
 
-        <div class="left-content">
-            <img src="userlist.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="userlist.html"><span class="left-text">User List</span></a>
-        </div>
+        
+       
 
         <div class="left-content">
-            <img src="news1.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
+            
             <a href="news.html"><span class="left-text">News</span></a>
         </div>
 
+        
+     
+
         <div class="left-content">
-            <img src="rules.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
+            
+            <a href="blog.html"><span class="left-text">Blog</span></a>
+        </div>
+
+        
+     
+
+        <div class="left-content">
+            
+            <a href="lvlcalculator.html"><span class="left-text">Level</span></a>
+        </div>
+
+        
+       
+
+        <div class="left-content">
+            
+            <a href="events.html"><span class="left-text">Events</span></a>
+
+        </div>
+
+        
+       
+
+        <div class="left-content">
+            
             <a href="rules.html"><span class="left-text">Rules</span></a>
-
         </div>
 
-        <div class="left-content">
-            <img src="Concact.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="contact.html"><span class="left-text">Contact</span></a>
-        </div>
 
         <!-- More navbar content here... -->
     </div>
 
     <div class="info-box">
-        <div class="welcome-title">Welcome, <b>guest</b></div>
-        <p>Welcome to <a href="https://roblogs.net">Roblogs.net</a></p>
+        <div class="info-title">&#8203 Hi, <b>guest</b>!</div>
+        <h2>&#8203 Roblox Nostalgia Hub</h2>
+        <p>&#8203 Experience "Old Roblox" in 2023!</p>
+       
+             
+        <b>&#8203 Build!</b> 
 
-        <span style="color: rgb(214, 21, 21);">Roblogs is a Roblox fansite,</span> dedicated to reimagining and revitalizing Roblox events & contests while gathering a community with interest in <span style="color: rgb(214, 21, 21);">"old roblox".</span></p>
-        <p>Go to the <a href="forum.html">forums</a> to connect with other users, and discuss various topics.</p>
-        <p><span style="color: rgb(214, 21, 21);">If you have any questions,</span> please refer to <a href="contact.html">Contact</a>.</p>
+        <p><img src="Roblogsbuild.png" alt="events" style="max-width: 375px; float: right;">
+        </p>
 
+        <p>&#8203 Build using old Roblox clients, to experience building back in the day.</p>
+        <p>&#8203 <img src="build.png" alt="Build" style="max-width: 70px;"></p>
+        <b>&#8203 Make Friends!</b> 
+        <p>&#8203 Talk to other "old Roblox" enthusiasts, and communicate on the forums!</p>
+        <p>&#8203 <img src="friendship.png" alt="friends" style="max-width: 70px;"></p>
 
-        <p>While you're here, why not check out some of our cool features? Such as <a href="lvlcalculator.html">Level Calculator</a>, or go check out the <a href="events.html">Events page</a>.</p>
+        <p><a href="download.html" style="float: right;">
+            <img src="downloadbutton3.png" alt="Build" style="max-width: 375px;">
+        </a> </p> 
+
+        <b>&#8203 Old Events!</b> 
+        <p>&#8203 Participate in remakes of old beloved Roblox events, just like back in the day!</p>
+        <p>&#8203 <img src="eventsimage.png" alt="events" style="max-width: 70px;"></p>
+ 
+
         
     </div>
-
-
-    <div class="info-boks">
-        <div class="info-title">Roblox Ultimate Paintball Tournament!</div>
-        <p></p>
-        <!-- You can add an image/banner here -->
-        <img src="tournament.png" alt="Info Banner">
-        <p><span style="color: rgb(255, 255, 255);"><b>You</b> can create a team of 3 players, and compete for the <span style="color: rgb(214, 21, 21);">Roblogs Ultimate Paintball Tournament Trophy</span></span> <span style="color: rgb(255, 255, 255);">on the</span> <a href="https://discord.gg/p6GZqsk4gn">Discord Server</a></p>
-        <p><a href="https://discord.gg/p6GZqsk4gn">Click here to sign up</a></p>
-    </div>
-
-    <div class="info-blogpost">
-        <div class="info-title">Latest Blog Post</div>
-        <h2>Win the Paintball Trophy in Trading Simulator!</h2>
-        <p>by freakyfinder</p>
-        <p>#11 - Tuesday 19-09-2023
-        </p>
-        <p>If you read the <a href="news.html">News</a> a few days ago, you might've noticed that we made partnership with <a href="https://www.roblox.com/games/13115838603/Trading-Simulator-90K-Visits">Trading Simulator</a>.</p>
-        <p>I personally think that <a href="https://www.roblox.com/games/13115838603/Trading-Simulator-90K-Visits">Trading Simulator</a> is a great game, and therefore, we agreed on giving the Paintball Trophy, as an award to the Paintball Tournament Winners, on <a href="https://www.roblox.com/games/13115838603/Trading-Simulator-90K-Visits">Trading Simulator</a>. And remember, the trophy is only going to have #3 stock, and will only be given out to the winners of this tournament.</p>
-       <p><b>Please note:</b> The trophy is going to be awarded to the tournament winners, as an Roblox accessory, and Trading Simulator item. Sign up  for the tournament below.</p>
-        <p><a href="https://discord.gg/p6GZqsk4gn">Click here to sign up</a></p>        <!-- You can add an image/banner here -->
-        
-        <p>
-        </p>
-        <!-- You can add an image/banner here -->
-        
-        <p>
-        </p>
-    </div>
-
-    <div class="info-newspost">
-        <div class="info-title">Latest News</div>
-        <h3>Sign up for the tournament now!</h3>
-        <p>Monday 18-09-2023
-        </p>
-        <p>We officially opened for signing up today! Gather a team of <b>three</b> players, and sign up on the forums.</p>
-        <p>Go to the pinned forum post, to sign up.</p>
-        <a href="https://discord.gg/p6GZqsk4gn">Sign up here!</a></p>
-        <!-- You can add an image/banner here -->
-        
-        <p>
-        </p>
-    </div>
+    
 
     <footer>
         <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
