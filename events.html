@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+            <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP7KLG03D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BP7KLG03D6');
+</script>
+    
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,13 +39,15 @@
         }
 
         .navbar {
-            background-color: red;
-            height: 1cm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+    background-color: rgb(6, 9, 21);
+    height: 1cm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 932px; /* Set the maximum width to make it centered */
+    margin: 0 auto; /* Center the navbar horizontally */
+}
 
         .navbar-text {
             color: white;
@@ -66,7 +79,7 @@
         }
 
         .info-title {
-            background-color: red;
+            background-color: rgb(6, 9, 21);
             color: white;
             font-size: 24px;
             padding: 3px;
@@ -88,8 +101,17 @@
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
             max-width: 600px; /* Adjust the width as needed */
-            height: 350px;
+            height: 375px;
             color: #ffffff;
+        }
+
+        .info-boks1 {
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 600px; /* Adjust the width as needed */
+            height: 375px;
         }
 
 
@@ -133,10 +155,16 @@
 footer {
   text-align: center;
   padding: 3px;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(6, 9, 21);
   color: white;
   flex-shrink: 0; 
 }
+
+.container {
+        width: 1000px; /* Set the fixed width of your container */
+        margin: 0 auto; /* Center the container horizontally */
+        overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
+    }
 
 
 
@@ -146,93 +174,121 @@ body {
 }
 
 
-    </style>
+</style>
 </head>
 <body>
-    <div class="header">
-        <img src="Roblogs_Paintball_Tournament_Banner1.png" alt="Logo" class="logo"> <!-- Erstat 'roblogs_LOGO.png' med stien til dit hovedlogo -->
-    </div>
-    <div class="navbar">
-
-        <div class="left-content">
-            <img src="login.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="index.html"><span class="left-text">Home</span></a>
+    <div class="container">
+        <div class="header">
+            <a href="index.html">
+                <img src="RoblogsHalloweenBanner.png" alt="Logo" class="logo" style="max-width: 100%;">
+            </a>
         </div>
+        <div class="navbar">
         
-        <div class="left-content">
-            <img src="Blog_knap.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="blog.html"><span class="left-text">Blog</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Png2.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="events.html"><span class="left-text">Events</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Level_Calculator.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="lvlcalculator.html"><span class="left-text">Level Calculator</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Png.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="forum.html"><span class="left-text">Forums</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="news1.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="news.html"><span class="left-text">News</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="rules.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="rules.html"><span class="left-text">Rules</span></a>
-
-        </div>
-
-        <div class="left-content">
-            <img src="explot.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="explore.html"><span class="left-text">Explore</span></a>
-        </div>
-
-        <!-- More navbar content here... -->
-    </div>
-    <div class="left-banner">
-        <img src="banners.png" alt="Left Banner" class="banner-image">
-    </div>
-    <div class="right-banner">
-        <img src="banners.png" alt="Right Banner" class="banner-image">
-    </div>
-    <div class="info-bok">
-        <div class="info-title">Events</div>
-        <p></p>
-        <!-- You can add an image/banner here -->
         
-        <p>One of our main focuses here at Roblogs is recreating old and beloved Roblox events and contests, and we're actively working on recreating new and fun events for you to participate in.</p>
-
-        </p>
-
-
-
-    </div>
-
-    <div class="info-boks">
-        <div class="info-title">Roblox Ultimate Paintball Tournament!</div>
-        <p></p>
-        <!-- You can add an image/banner here -->
-        <img src="tournament.png" alt="Info Banner">
-        <p><center><p>To sign up for this event, head over to our discord server!</p></center>
-        <a href="https://discord.gg/p6GZqsk4gn">Discord</a></p></p>
+    
+            <div class="left-content">
+                <a href="myroblogs.html"><span class="left-text">My ROBLOGS</span></a>
+            </div>
+            
+            
+    
+            <div class="left-content">
+                
+                <a href="games.html"><span class="left-text">Games</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="userlist.html"><span class="left-text">People</span></a>
+            </div>
+    
+            
+            
+    
+            <div class="left-content">
+                
+                <a href="forum.html"><span class="left-text">Forum</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="news.html"><span class="left-text">News</span></a>
+            </div>
+    
+            
+         
+    
+            <div class="left-content">
+                
+                <a href="blog.html"><span class="left-text">Blog</span></a>
+            </div>
+    
+            
+         
+    
+            <div class="left-content">
+                
+                <a href="lvlcalculator.html"><span class="left-text">Level</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="events.html"><span class="left-text"><b>Events</b></span></a>
+    
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="rules.html"><span class="left-text">Rules</span></a>
+            </div>
+    
+    
+            <!-- More navbar content here... -->
         </div>
-
-
+    
+        <div class="info-bok">
+            <div class="info-title">Events</div>
+            <p></p>
+            <!-- You can add an image/banner here -->
+            
+            <p>One of our main focuses here at Roblogs is recreating old and beloved Roblox events and contests, and we're actively working on recreating new and fun events for you to participate in.</p>
+    
+            </p>
+    
+    
+    
+        </div>
+    
+        <div class="info-boks">
+            <div class="info-title">Roblox Ultimate Paintball Tournament!</div>
+            <p></p>
+            <!-- You can add an image/banner here -->
+            <img src="tournament.png" alt="Info Banner">
+            <p><span style="color: rgb(255, 255, 255);"><b>You</b> can create a team of 3 players, and compete for the <span style="color: rgb(214, 21, 21);">Roblogs Ultimate Paintball Tournament Trophy</span></span> <span style="color: rgb(255, 255, 255);">on the</span> <a href="https://discord.gg/p6GZqsk4gn">Discord Server</a></p>
+            <p><a href="https://discord.gg/p6GZqsk4gn">Click here to sign up</a></p>
+            </div>
+    
+    
         <footer>
-            <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
+            <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
             <a href="rules.html">Roblogs Guidelines</a></p>
             <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
             <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
           </footer>
-
+    </div>
 
 </body>
 </html>

@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP7KLG03D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BP7KLG03D6');
+</script>
+
+    
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,13 +40,21 @@
         }
 
         .navbar {
-            background-color: red;
-            height: 1cm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+    background-color: rgb(6, 9, 21);
+    height: 1cm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 932px; /* Set the maximum width to make it centered */
+    margin: 0 auto; /* Center the navbar horizontally */
+}
+
+.container {
+        width: 1000px; /* Set the fixed width of your container */
+        margin: 0 auto; /* Center the container horizontally */
+        overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
+    }
 
         .navbar-text {
             color: white;
@@ -66,7 +86,7 @@
         }
 
         .info-title {
-            background-color: red;
+            background-color: rgb(6, 9, 21);
             color: white;
             font-size: 24px;
             padding: 3px;
@@ -94,7 +114,7 @@
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
             max-width: 600px; /* Adjust the width as needed */
-            height: 250px;
+            height: 265px;
         }
 
 
@@ -141,7 +161,7 @@
 footer {
   text-align: center;
   padding: 3px;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(6, 9, 21);
   color: white;
 }
 
@@ -153,134 +173,168 @@ body {
 }
 
 
-    </style>
+</style>
 </head>
 <body>
-    <div class="header">
-        <img src="Roblogs_Paintball_Tournament_Banner1.png" alt="Logo" class="logo"> <!-- Erstat 'roblogs_LOGO.png' med stien til dit hovedlogo -->
-    </div>
-    <div class="navbar">
-
-        <div class="left-content">
-            <img src="login.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="index.html"><span class="left-text">Home</span></a>
+    <div class="container">
+        <div class="header">
+            <a href="index.html">
+                <img src="RoblogsHalloweenBanner.png" alt="Logo" class="logo" style="max-width: 100%;">
+            </a>
         </div>
-
-        <div class="left-content">
-            <img src="Blog_knap.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="blog.html"><span class="left-text">Blog</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Png2.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="events.html"><span class="left-text">Events</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Level_Calculator.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="lvlcalculator.html"><span class="left-text">Level Calculator</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Png.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="forum.html"><span class="left-text">Forums</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="news1.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="news.html"><span class="left-text">News</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="rules.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="rules.html"><span class="left-text">Rules</span></a>
-
-        </div>
-
-        <div class="left-content">
-            <img src="explot.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="explore.html"><span class="left-text">Explore</span></a>
-        </div>
-
-        <!-- More navbar content here... -->
-    </div>
-    <div class="left-banner">
-        <img src="banners.png" alt="Left Banner" class="banner-image">
-    </div>
-    <div class="right-banner">
-        <img src="banners.png" alt="Right Banner" class="banner-image">
-    </div>
-    <div class="info-boks">
-        <div class="info-title">Level Calculator Info</div>
-        <p></p>
-        <!-- You can add an image/banner here -->
+        <div class="navbar">
         
-
-            <p>
-
-                This calculator is based on Miked's and Clockwork's level calculator formula, but it has been updated with current stats to match the original level calculator. It also shows how likely you would have been chosen for BC back in 2007 and overall gives you a number indicating how worthy of a Robloxian you are. Enter your stats to see your level!
-                </p>
-                <p class="bold-text">If you get NaN for your result, it means one of your numbers wasn't typed like a number.</p>
-        </p>
+        
+    
+            <div class="left-content">
+                <a href="myroblogs.html"><span class="left-text">My ROBLOGS</span></a>
+            </div>
+            
+            
+    
+            <div class="left-content">
+                
+                <a href="games.html"><span class="left-text">Games</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="userlist.html"><span class="left-text">People</span></a>
+            </div>
+    
+            
+            
+    
+            <div class="left-content">
+                
+                <a href="forum.html"><span class="left-text">Forum</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="news.html"><span class="left-text">News</span></a>
+            </div>
+    
+            
+         
+    
+            <div class="left-content">
+                
+                <a href="blog.html"><span class="left-text">Blog</span></a>
+            </div>
+    
+            
+         
+    
+            <div class="left-content">
+                
+                <a href="lvlcalculator.html"><span class="left-text"><b>Level</b></span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="events.html"><span class="left-text">Events</span></a>
+    
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="rules.html"><span class="left-text">Rules</span></a>
+            </div>
+    
+    
+            <!-- More navbar content here... -->
+        </div>
+    
+        <div class="info-boks">
+            <div class="info-title">Level Calculator Info</div>
+            <p></p>
+            <!-- You can add an image/banner here -->
+            
+    
+                <p>
+    
+                    This calculator is based on Miked's and Clockwork's level calculator formula, but it has been updated with current stats to match the original level calculator. It also shows how likely you would have been chosen for BC back in 2007 and overall gives you a number indicating how worthy of a Robloxian you are. Enter your stats to see your level!
+                    </p>
+                    <p class="bold-text">If you get NaN for your result, it means one of your numbers wasn't typed like a number.</p>
+            </p>
+        </div>
+    
+        <div class="info-boksi">
+            <div class="info-title">Level Calculator</div>
+            <p></p>
+            <form id="inputForm">
+                <label for="accountYears">Account Years:</label>
+                <input type="number" id="accountYears" name="accountYears" value=""><br>
+        
+                <label for="badges">Official Roblox Badges:</label>
+                <input type="number" id="badges" name="badges" value=""><br>
+        
+                <label for="friends">Friends:</label>
+                <input type="number" id="friends" name="friends" value=""><br>
+        
+                <label for="followers">Followers:</label>
+                <input type="number" id="followers" name="followers" value=""><br>
+        
+                <label for="hats">Hats:</label>
+                <input type="number" id="hats" name="hats" value=""><br>
+        
+                <label for="placeVisits">Place Visits:</label>
+                <input type="number" id="placeVisits" name="placeVisits" value=""><br>
+        
+                <input type="button" value="Calculate" onclick="beregnResultat()">
+            </form>
+        
+            <div id="resultat"></div>
+    
+            <a href="https://roblox.com/users/profile">Add to profile</a>
+        
+            <script>
+                function beregnResultat() {
+                    // Hent værdierne fra inputfelterne
+                    const accountYears = parseFloat(document.getElementById("accountYears").value);
+                    const badges = parseFloat(document.getElementById("badges").value);
+                    const friends = parseFloat(document.getElementById("friends").value);
+                    const followers = parseFloat(document.getElementById("followers").value);
+                    const hats = parseFloat(document.getElementById("hats").value);
+                    const placeVisits = parseFloat(document.getElementById("placeVisits").value);
+        
+                    // Beregn resultatet af den komplekse formel
+                    const result = (30 * (-1 / (1 * accountYears * badges + 0.365) + 1) +
+                        (10 * (-1 / (friends / 200 + 1) + 1) + 15 * (-1 / (followers / 3000 + 1) + 1)) +
+                        (25 * (hats / (hats + 4)) ** 2 + 2 * (hats / (hats + 5)) ** 2) +
+                        50 * (-1 / (1.2 * placeVisits / 25000 + 1) + 1));
+        
+                    // Vis resultatet på siden
+                    document.getElementById("resultat").innerHTML = "Your level is: " + result;
+                    
+                    
+                }
+            </script>
+            </p>
+        </div>
+    
+    
+    
+        <footer>
+            <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
+            <a href="rules.html">Roblogs Guidelines</a></p>
+            <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
+            <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
+          </footer>
     </div>
 
-    <div class="info-boksi">
-        <div class="info-title">Level Calculator</div>
-        <p></p>
-        <form id="inputForm">
-            <label for="accountYears">Account Years:</label>
-            <input type="number" id="accountYears" name="accountYears" value=""><br>
-    
-            <label for="badges">Badges:</label>
-            <input type="number" id="badges" name="badges" value=""><br>
-    
-            <label for="friends">Friends:</label>
-            <input type="number" id="friends" name="friends" value=""><br>
-    
-            <label for="followers">Followers:</label>
-            <input type="number" id="followers" name="followers" value=""><br>
-    
-            <label for="hats">Hats:</label>
-            <input type="number" id="hats" name="hats" value=""><br>
-    
-            <label for="placeVisits">Place Visits:</label>
-            <input type="number" id="placeVisits" name="placeVisits" value=""><br>
-    
-            <input type="button" value="Calculate" onclick="beregnResultat()">
-        </form>
-    
-        <div id="resultat"></div>
-    
-        <script>
-            function beregnResultat() {
-                // Hent værdierne fra inputfelterne
-                const accountYears = parseFloat(document.getElementById("accountYears").value);
-                const badges = parseFloat(document.getElementById("badges").value);
-                const friends = parseFloat(document.getElementById("friends").value);
-                const followers = parseFloat(document.getElementById("followers").value);
-                const hats = parseFloat(document.getElementById("hats").value);
-                const placeVisits = parseFloat(document.getElementById("placeVisits").value);
-    
-                // Beregn resultatet af den komplekse formel
-                const result = (30 * (-1 / (1 * accountYears * badges + 0.365) + 1) +
-                    (10 * (-1 / (friends / 200 + 1) + 1) + 15 * (-1 / (followers / 3000 + 1) + 1)) +
-                    (25 * (hats / (hats + 4)) ** 2 + 2 * (hats / (hats + 5)) ** 2) +
-                    50 * (-1 / (1.2 * placeVisits / 25000 + 1) + 1));
-    
-                // Vis resultatet på siden
-                document.getElementById("resultat").innerHTML = "Your level is: " + result;
-            }
-        </script>
-        </p>
-    </div>
-
-
-
-    <footer>
-        <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
-        <a href="rules.html">Roblogs Guidelines</a></p>
-        <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
-        <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
-      </footer>
 </body>
 </html>

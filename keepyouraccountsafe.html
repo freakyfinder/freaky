@@ -1,17 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP7KLG03D6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BP7KLG03D6');
-</script>
-    
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,6 +38,12 @@
     margin: 0 auto; /* Center the navbar horizontally */
 }
 
+.container {
+        width: 1000px; /* Set the fixed width of your container */
+        margin: 0 auto; /* Center the container horizontally */
+        overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
+    }
+
         .navbar-text {
             color: white;
             font-size: 20px;
@@ -82,51 +77,27 @@
             background-color: rgb(6, 9, 21);
             color: white;
             font-size: 24px;
-            padding: 5px;
+            padding: 3px;
         }
-
-
-        footer {
-  text-align: center;
-  padding: 3px;
-  background-color: rgb(6, 9, 21);
-  color: white;
-}
 
 
         .info-boks {
-            text-align: left;
-            background-color: rgb(255, 255, 255);
-            margin: 120px auto; /* Adjust the margin-top value to move it further down */
-            padding: 0px;
-            max-width: 1000px; /* Adjust the width as needed */
-            height: 389px;
-        }
-
-        .info-bokss {
             text-align: center;
             background-color: rgb(255, 255, 255);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 1000px; /* Adjust the width as needed */
-            height: 375px;
+            max-width: 700px; /* Adjust the width as needed */
+            height: 275px;
         }
 
         .info-boksi {
-            text-align: left;
+            text-align: center;
             background-color: rgb(255, 255, 255);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 1000px; /* Adjust the width as needed */
-            height: 215px;
+            max-width: 750px; /* Adjust the width as needed */
+            height: 450px;
         }
-
-
-        .navbar a {
-            text-decoration: none; /* Fjern understregning */
-            color: white; /* Indstil farve på linktekst efter behov */
-        }
-
 
         .left-banner,
         .right-banner {
@@ -142,6 +113,12 @@
             left: 0;
         }
 
+
+        .navbar a {
+            text-decoration: none; /* Fjern understregning */
+            color: white; /* Indstil farve på linktekst efter behov */
+        }
+
         .right-banner {
             right: 0;
         }
@@ -152,16 +129,19 @@
             height: auto;
         }
 
-        .container {
-        width: 1000px; /* Set the fixed width of your container */
-        margin: 0 auto; /* Center the container horizontally */
-        overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
-        }
-
 
         .info-boks img {
     max-width: 600px; /* Juster bredden efter dine præferencer */
     max-height: 600px; /* Juster højden efter dine præferencer */
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: rgb(6, 9, 21);
+  color: white;
 }
 
 
@@ -209,7 +189,7 @@ body {
     
             <div class="left-content">
                 
-                <a href="forum.html"><span class="left-text"><b>Forum</b></span></a>
+                <a href="forum.html"><span class="left-text">Forum</span></a>
             </div>
     
             
@@ -225,7 +205,7 @@ body {
     
             <div class="left-content">
                 
-                <a href="blog.html"><span class="left-text">Blog</span></a>
+                <a href="blog.html"><span class="left-text"><b>Blog</b></span></a>
             </div>
     
             
@@ -258,75 +238,26 @@ body {
         </div>
     
     
-        <div class="info-bokss">
-            <div class="info-title">Forums</div>
-            <p></p>
+          <div class="info-boksi">
+            <div class="info-title">Full blog post</div>
+            <p>by insaneshane</p>
+            <p>#9 - Monday - 18-09-2023</p>
+            <p>
+                I would like to remind my fellow Robloxians to keep their accounts safe and secure by any means necessary.
+                Remember to use strong passwords that are hard to guess, and don't use the same password for everything. 
+                Since its not 2012, I don't need to remind you to keep your password to yourself. But even then- if you have anything good in your account, they will come for it, and your password alone isn't going to save you.
+                It only takes three minutes to set up the 2-factor Authentication. (I would recommend choosing the option for the Google Authenticator App, as it provides more security and ease than receiving codes through email) It might be a minor inconvenience to put in that code with every log-in, but it's even more inconvenient losing all your limiteds to cybercriminals. And remember- do not fall for password scams, cookie/inspect element scams, or any type of trick asking you to upload your avatar to some site for a baloney art project. 
+                If you think your account may be at risk, remember to sign out from all other sessions to refresh your cookie, change your password, and verify that your email is still yours. </p>
             <!-- You can add an image/banner here -->
             
-            <p>Connect with other users, and discuss various topics here on the forums.</p>
-    
-            <b>WARNING:</b>
-            <p>Roblogs does allow mature content, and should therefore only be used by individuals aged 13 and above. Just keep that in mind.</p>
-    
-            <b>DISCLAIMER:</b>
-            <p>Roblogs is not affiliated with the Roblox corp. in any way. Nothing said here reflects on the official Roblox website.</p>
-    
-            <center><p>Please read the Rules before making use of the forums.</p></center>
-            <p>Please note: The forums are on the Discord server for now, until the forums are ready on the website.</p>
-    
-                <p><a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
+            <p>
             </p>
         </div>
     
-        <div class="info-boks">
-            <div class="info-title">Roblox</div>
-            <p></p>
-            <!-- You can add an image/banner here -->
-            
-            <p> &nbsp;<a href="https://discord.gg/p6GZqsk4gn">Roblox Stuff</a> - Discuss anything Roblox related.</p>
-            
-            <p style="font-size: 13px;">&nbsp; Moderator: <a href="insaneshane.html">insaneshane</a></p>
-            <hr>
-            <p></p>
-           
-            <p> &nbsp;<a href="https://discord.gg/p6GZqsk4gn">Roblogs Discussion</a> - Discuss the Roblogs website, features, or anything Roblogs related.</p>
-            
-            <p style="font-size: 13px;">&nbsp; Moderators: <a href="freakyfinder.html">freakyfinder</a>, <a href="https://www.roblox.com/users/812610431/profile">ZebraAgentLight</a></p>
-            <hr>
-            <p></p>
-            
-            <p> &nbsp;<a href="https://discord.gg/p6GZqsk4gn">Events/Contests</a> - Anything Events/Contests related.</p>
-            
-            <p style="font-size: 13px;">&nbsp; Moderator: <a href="https://www.roblox.com/users/3157944173/profile">Spekren</a></p>
-            <hr>
-            <p></p>
-            
-            <p> &nbsp;<a href="https://discord.gg/p6GZqsk4gn">Explore</a> - Explore other projects made by users, or advertise your own.</p>
-            
-            <p style="font-size: 13px;">&nbsp; Moderator: <a href="https://www.roblox.com/users/3157944173/profile">Spekren</a></p>
-            
-        </div>
-        
-        <div class="info-boksi">
-            <div class="info-title">Other Stuff</div>
-            
-            <p></p>
-            <!-- You can add an image/banner here -->
-            
-            <p></p>
-            
-            <p> &nbsp;<a href="https://discord.gg/p6GZqsk4gn">Other Stuff</a> - Stuff that does not belong in any other forum goes here. Be sure you're posting in the right forum.</p>
-            
-            <p style="font-size: 13px;">&nbsp; Moderator: <a href="https://www.roblox.com/users/3157944173/profile">Spekren</a></p>
-            <hr>
-            <p></p>
-            
-            <p> &nbsp;<a href="https://discord.gg/p6GZqsk4gn">Off Topic</a> - Stuff that is completely off topic. This could be IRL content, or related to other games.</p>
-            
-            <p style="font-size: 13px;">&nbsp; Moderator: <a href="https://www.roblox.com/users/812610431/profile">ZebraAgentLight</a></p>
-            
-        </div>
-        
+    
+    
+    
+    
     
     
     

@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJV28T664W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RJV28T664W');
+</script>
+    
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,18 +38,23 @@
             margin-top: -4.0cm; /* Flyt logoet lidt op for at reducere afstanden til navigationen */
         }
 
-        .navbar {
-            background-color: red;
-            height: 1cm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+        /* Center the navbar and create equal space on both sides */
+.navbar {
+    background-color: rgb(6, 9, 21);
+    height: 1cm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 932px; /* Set the maximum width to make it centered */
+    margin: 0 auto; /* Center the navbar horizontally */
+}
 
+
+
+        /* Optional: Adjust button styling for better alignment */
         .navbar-text {
-            color: white;
-            font-size: 20px;
+            padding: 10px; /* Add some padding to the buttons for spacing */
         }
 
         /* Juster margen til de midterste tekster */
@@ -66,19 +82,26 @@
         }
 
         .info-title {
-            background-color: red;
+            background-color: rgb(6, 9, 21);
             color: white;
             font-size: 24px;
             padding: 3px;
         }
 
+        .welcome-title {
+            background-color: rgb(6, 9, 21);
+            color: white;
+            font-size: 30px;
+            padding: 3px;
+        }
+
         .info-box {
-    text-align: center;
+    text-align: left;
     background-color: rgb(255, 255, 255);
     margin: 75px auto; /* Juster marginen, hvis nødvendigt */
     padding: 0px;
-    width: 600px; /* Juster bredden efter behov */
-    height: 160px; /* Juster højden efter behov */
+    width: 1000px; /* Juster bredden efter behov */
+    height: 670px; /* Juster højden efter behov */
 }
 
 
@@ -88,6 +111,43 @@
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
             max-width: 600px; /* Adjust the width as needed */
+            height: 375px;
+        }
+
+        .info-box5 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 375px;
+        }
+
+        .info-boksssi {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 375px;
+        }
+
+        .info-blogpost {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 425px;
+        }
+
+        .info-newspost {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 250px;
         }
 
         .left-banner,
@@ -126,10 +186,16 @@
     max-height: 600px; /* Juster højden efter dine præferencer */
 }
 
+.container {
+        width: 1000px; /* Set the fixed width of your container */
+        margin: 0 auto; /* Center the container horizontally */
+        overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
+    }
+
 footer {
   text-align: center;
   padding: 3px;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(6, 9, 21);
   color: white;
 }
 
@@ -144,85 +210,128 @@ body {
 }
 
 
-    </style>
+</style>
 </head>
 <body>
-    <div class="header">
-        <img src="Roblogs_Paintball_Tournament_Banner1.png" alt="Logo" class="logo"> <!-- Erstat 'roblogs_LOGO.png' med stien til dit hovedlogo -->
-    </div>
-    <div class="navbar">
-      
-        <div class="left-content">
-            <img src="login.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="index.html"><span class="left-text">Home</span></a>
+    <div class="container">
+        <div class="header">
+            <a href="index.html">
+                <img src="RoblogsHalloweenBanner.png" alt="Logo" class="logo" style="max-width: 100%;">
+            </a>
         </div>
-
-        <div class="left-content">
-            <img src="Blog_knap.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="blog.html"><span class="left-text">Blog</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Png2.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="events.html"><span class="left-text">Events</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Level_Calculator.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="lvlcalculator.html"><span class="left-text">Level Calculator</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Png.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="forum.html"><span class="left-text">Forums</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="news1.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="news.html"><span class="left-text">News</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="rules.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="rules.html"><span class="left-text">Rules</span></a>
-
-        </div>
-
-        <div class="left-content">
-            <img src="explot.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="explore.html"><span class="left-text">Explore</span></a>
-        </div>
-
-        <!-- More navbar content here... -->
-    </div>
-    <div class="left-banner">
-        <img src="banners.png" alt="Left Banner" class="banner-image">
-    </div>
-    <div class="right-banner">
-        <img src="banners.png" alt="Right Banner" class="banner-image">
-    </div>
-    <div class="info-box">
-        <div class="info-title">Information</div>
-        <p>Welcome to Roblox.net</p>
-
-            A Roblox fansite, dedicated to reimagining and revitalizing Roblox events & contests while gathering a community with interest in “old Roblox”.</p>
-
+        <div class="navbar">
         
-    </div>
-    <div class="info-boks">
-        <div class="info-title">Roblox Ultimate Paintball Tournament!</div>
-        <p></p>
-        <!-- You can add an image/banner here -->
-        <img src="tournament.png" alt="Info Banner">
-        <p>This is a Roblox fansite...</p>
+        
+    
+            <div class="left-content">
+                <a href="myroblogs.html"><span class="left-text">My ROBLOGS</span></a>
+            </div>
+            
+            
+    
+            <div class="left-content">
+                
+                <a href="games.html"><span class="left-text">Games</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="userlist.html"><span class="left-text">People</span></a>
+            </div>
+    
+            
+            
+    
+            <div class="left-content">
+                
+                <a href="forum.html"><span class="left-text">Forum</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="news.html"><span class="left-text">News</span></a>
+            </div>
+    
+            
+         
+    
+            <div class="left-content">
+                
+                <a href="blog.html"><span class="left-text">Blog</span></a>
+            </div>
+    
+            
+         
+    
+            <div class="left-content">
+                
+                <a href="lvlcalculator.html"><span class="left-text">Level</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="events.html"><span class="left-text">Events</span></a>
+    
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="rules.html"><span class="left-text">Rules</span></a>
+            </div>
+    
+    
+            <!-- More navbar content here... -->
+        </div>
+    
+        <div class="info-box">
+            <div class="info-title">&#8203 Hi, <b>guest</b>!</div>
+            <h2>&#8203 Roblox Nostalgia Hub</h2>
+            <p>&#8203 Experience "Old Roblox" in 2023!</p>
+           
+                 
+            <b>&#8203 Build!</b> 
+    
+            <p><img src="Roblogsbuild.png" alt="events" style="max-width: 375px; float: right;">
+            </p>
+    
+            <p>&#8203 Build using old Roblox clients, to experience building back in the day.</p>
+            <p>&#8203 <img src="build.png" alt="Build" style="max-width: 70px;"></p>
+            <b>&#8203 Make Friends!</b> 
+            <p>&#8203 Talk to other "old Roblox" enthusiasts, and communicate on the forums!</p>
+            <p>&#8203 <img src="friendship.png" alt="friends" style="max-width: 70px;"></p>
+    
+            <p><a href="download.html" style="float: right;">
+                <img src="downloadbutton3.png" alt="Build" style="max-width: 375px;">
+            </a> </p> 
+    
+            <b>&#8203 Old Events!</b> 
+            <p>&#8203 Participate in remakes of old beloved Roblox events, just like back in the day!</p>
+            <p>&#8203 <img src="eventsimage.png" alt="events" style="max-width: 70px;"></p>
+     
+    
+            
+        </div>
+        
+    
+        <footer>
+            <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
+            <a href="rules.html">Roblogs Guidelines</a></p>
+            <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
+            <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
+          </footer>
     </div>
 
-    <footer>
-        <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
-        <a href="rules.html">Roblogs Guidelines</a></p>
-        <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
-        <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
-      </footer>
-    
 </body>
 </html>

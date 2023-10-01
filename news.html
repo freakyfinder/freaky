@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+            <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP7KLG03D6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BP7KLG03D6');
+</script>
+
+    
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,13 +40,21 @@
         }
 
         .navbar {
-            background-color: red;
-            height: 1cm;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
+    background-color: rgb(6, 9, 21);
+    height: 1cm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 932px; /* Set the maximum width to make it centered */
+    margin: 0 auto; /* Center the navbar horizontally */
+}
+
+.container {
+        width: 1000px; /* Set the fixed width of your container */
+        margin: 0 auto; /* Center the container horizontally */
+        overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
+    }
 
         .navbar-text {
             color: white;
@@ -66,7 +86,7 @@
         }
 
         .info-title {
-            background-color: red;
+            background-color: rgb(6, 9, 21);
             color: white;
             font-size: 24px;
             padding: 3px;
@@ -87,8 +107,80 @@
             background-color: rgb(255, 255, 255);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 600px; /* Adjust the width as needed */
+            max-width: 800px; /* Adjust the width as needed */
             height: 200px;
+        }
+
+        .info-box1 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 175px;
+        }
+
+        .info-box2 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 185px;
+        }
+
+        .info-box3 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 215px;
+        }
+
+        .info-box4 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 365px;
+        }
+
+        .info-box5 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 325px;
+        }
+
+        .info-box6 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 225px;
+        }
+
+        .info-box7 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 450px;
+        }
+
+        .info-box8 {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 290px;
         }
 
         .left-banner,
@@ -108,7 +200,7 @@
         footer {
   text-align: center;
   padding: 3px;
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(6, 9, 21);
   color: white;
 }
 
@@ -141,122 +233,225 @@ body {
 }
 
 
-    </style>
+</style>
 </head>
 <body>
-    <div class="header">
-        <img src="Roblogs_Paintball_Tournament_Banner1.png" alt="Logo" class="logo"> <!-- Erstat 'roblogs_LOGO.png' med stien til dit hovedlogo -->
-    </div>
-    <div class="navbar">
-
-        <div class="left-content">
-            <img src="login.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="index.html"><span class="left-text">Home</span></a>
+    <div class="container">
+        <div class="header">
+            <a href="index.html">
+                <img src="RoblogsHalloweenBanner.png" alt="Logo" class="logo" style="max-width: 100%;">
+            </a>
         </div>
-
-        <div class="left-content">
-            <img src="Blog_knap.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="blog.html"><span class="left-text">Blog</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Png2.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="events.html"><span class="left-text">Events</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Level_Calculator.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="lvlcalculator.html"><span class="left-text">Level Calculator</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="Png.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="forum.html"><span class="left-text">Forums</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="news1.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="news.html"><span class="left-text">News</span></a>
-        </div>
-
-        <div class="left-content">
-            <img src="rules.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="rules.html"><span class="left-text">Rules</span></a>
-
-        </div>
-
-        <div class="left-content">
-            <img src="explot.png" alt="Venstre Billede" class="left-image"> <!-- Erstat 'left_image.png' med stien til dit venstre billede -->
-            <a href="explore.html"><span class="left-text">Explore</span></a>
-        </div>
-
-        <!-- More navbar content here... -->
-    </div>
-    <div class="left-banner">
-        <img src="banners.png" alt="Left Banner" class="banner-image">
-    </div>
-    <div class="right-banner">
-        <img src="banners.png" alt="Right Banner" class="banner-image">
-    </div>
-    <div class="info-boks">
-        <div class="info-title">News Information</div>
-        <p></p>
-        <!-- You can add an image/banner here -->
+        <div class="navbar">
         
-        <p>We will post important announcements and news here. Stay tuned for cool stuff!
-        </p>
-    </div>
-
+        
+    
+            <div class="left-content">
+                <a href="myroblogs.html"><span class="left-text">My ROBLOGS</span></a>
+            </div>
+            
+            
+    
+            <div class="left-content">
+                
+                <a href="games.html"><span class="left-text">Games</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="userlist.html"><span class="left-text">People</span></a>
+            </div>
+    
+            
+            
+    
+            <div class="left-content">
+                
+                <a href="forum.html"><span class="left-text">Forum</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="news.html"><span class="left-text"><b>News</b></span></a>
+            </div>
+    
+            
+         
+    
+            <div class="left-content">
+                
+                <a href="blog.html"><span class="left-text">Blog</span></a>
+            </div>
+    
+            
+         
+    
+            <div class="left-content">
+                
+                <a href="lvlcalculator.html"><span class="left-text">Level</span></a>
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="events.html"><span class="left-text">Events</span></a>
+    
+            </div>
+    
+            
+           
+    
+            <div class="left-content">
+                
+                <a href="rules.html"><span class="left-text">Rules</span></a>
+            </div>
+    
+    
+            <!-- More navbar content here... -->
+        </div>
+     
+        <div class="info-boks">
+            <div class="info-title">News Information</div>
+            <p></p>
+            <!-- You can add an image/banner here -->
+            
+            <p>We will post important announcements and news here, aswell as website Updates. Stay tuned for cool stuff!
+            </p>
+        </div>
+    
+        <div class="info-box8">
+            <div class="info-title">Halloween!</div>
+            <p>Sunday 01-10-2023</p>
+            <p>Hello everybody!</p>
+            <p>As you might've seen, we've decorated for halloween! Then I also change some stuff here and there around the site, such as changing some stuff on the <a href="userlist.html">user list</a>, and added profiles for me & insaneshane. View them here: <a href="freakyfinder.html">freakyfinder</a>, <a href="insaneshane.html">insaneshane</a>.</p>
+            <p>Also, we hit 50 members on the Discord! Thank you all for being a part of Roblogs, and thank you for being such an active community! In 12 days, we will also be celebrating the first month of the website!</p>
+        </div>
+    
+        <div class="info-box7">
+            <div class="info-title">Site revamp!</div>
+            <p>Wednesday 27-09-2023
+            <p><b>Huge site revamp!</b></p>
+            <p>We completely revamped the site, to give the users a chance to experience Roblox, in its earliest era. We added a lot of cool features to the site too!</p>
+            <p>- Redesigned site, to look like the early Roblox site.</p>
+            <p>- We added a download page, for the oldest archived versions of Roblox (Roblox Clients). <a href="download.html">Download here!</a></p>
+            <p>- Added a new <a href="games.html">Games</a> page, where the best old Roblox games is displayed, for you to play. We will also add a category, for games, up for download in the old clients, but that will be an coming update.</p>
+            <p>- Added a lot of new pages, that will make it possible to really relive Roblox in its hayday.</p>
+            <p>- The big banner you see at the top, will be changed for every season. You can expect this to change when it's halloween, christmas, summer etc.</p>
+        </div>
+    
+        <div class="info-box6">
+            <div class="info-title">Sign up for the tournament now!</div>
+            <p>Monday 18-09-2023
+            </p>
+            <p>We officially opened for signing up today! Gather a team of <b>three</b> players, and sign up on the forums.</p>
+            <p>Go to the pinned forum post, to sign up.</p>
+            <a href="https://discord.gg/p6GZqsk4gn">Sign up here!</a>
+            <!-- You can add an image/banner here -->
+            
+            <p>
+            </p>
+        </div>
+    
+        <div class="info-box5">
+            <div class="info-title">Home page update</div>
+            <p>Sunday 17-09-2023
+            </p>
+            <p>Todays update was mainly focused on revamping the <a href="index.html">Home Page</a>. Stuff I added on the <a href="index.html">Home Page</a> is mentioned down below</p>
+            <p>- Completely new Welcome Message</p>
+            <p>- Added some <span style="color: rgb(214, 21, 21);">color</span> to the Welcome message</p>
+            <p>- Added most recent news post, onto the <a href="index.html">Home Page</a></p>
+            <p>- Added most recent <a href="blog.html">Blog</a> post to the <a href="index.html">Home Page</a></p>
+            <!-- You can add an image/banner here -->
+            
+            <p>
+            </p>
+        </div>
+    
+        <div class="info-box4">
+            <div class="info-title">Site update!</div>
+            <p>Saturday 16-09-2023
+            </p>
+            <p>Today I made a update changing several things on the site. You can see some of the things I changed down below.</p>
+            <p>- Changed some text around the site</p>
+            <p>- Completely revamped the <a href="forum.html">forums</a></p>
+            <p>- Removed the explore page (I put explore under the <a href="forum.html">forums</a> tab)</p>
+            <p>- Added a new <a href="contact.html">contact</a> page</p>
+            <p>- Other small changes around the site. Go take a look for yourself!</p>
+            <!-- You can add an image/banner here -->
+            
+            <p>
+            </p>
+        </div>
+    
          <div class="info-bokss">
-        <div class="info-title">Another small update</div>
-        <p>Tuesday 11-09-2023
-        </p>
-        <p>
-            For todays update I did the following:</p>
-             <p>Added a "read more" feature for long blog posts. View it here: <a href="blog.html">Blog</a></p>
-             <p>Made navbar icons smaller</p>
-             <p>Bug fixes</p>
-        <!-- You can add an image/banner here -->
-        
-        <p>
-        </p>
+            <div class="info-title">Partnership</div>
+            <p>Thursday 14-09-2023
+            </p>
+            <p>Today we're happy to announce, that we made partnership with <a href="https://discord.gg/vZDWrjEv">Fintarga Studios</a></p>
+             <p><a href="https://discord.gg/vZDWrjEv">Fintarga Studios</a> is the Game studio behind "Trading Simulator", and it has about 220 discord members, and 85k+ place visits.</p>
+            <!-- You can add an image/banner here -->
+            
+            <p>
+            </p>
+        </div>
+    
+             <div class="info-box3">
+            <div class="info-title">Another small update</div>
+            <p>Wednesday 13-09-2023
+            </p>
+            <p>
+                For todays update I did the following:</p>
+                 <p>Added a "read more" feature for long blog posts. View it here: <a href="blog.html">Blog</a></p>
+                 <p>Made navbar icons smaller</p>
+            <!-- You can add an image/banner here -->
+            
+            <p>
+            </p>
+        </div>
+    
+         <div class="info-box1">
+            <div class="info-title">First Update</div>
+            <p>Tuesday 12-09-2023
+            </p>
+            <p>
+                Todays update is the first update on the website ever, and it's just a small update with some slight adjustments and bug fixes!</p>
+            <!-- You can add an image/banner here -->
+            
+            <p>
+            </p>
+        </div>
+    
+        <div class="info-box2">
+            <div class="info-title">The site is up!</div>
+            <p>Tuesday 12-09-2023
+            </p>
+            <p>
+                The site is up! 
+                Go check out some of our features, such as calculating your level, exploring other users projects, or advertise your own. 
+                And even go talk to other users on the forum!
+                Have a good time using our website!</p>
+            <!-- You can add an image/banner here -->
+            
+            <p>
+            </p>
+        </div>
+    
+    
+        <footer>
+            <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
+            <a href="rules.html">Roblogs Guidelines</a></p>
+            <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
+            <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
+          </footer>
     </div>
-
-     <div class="info-bokss">
-        <div class="info-title">First Update</div>
-        <p>Tuesday 11-09-2023
-        </p>
-        <p>
-            Todays update is the first update on the website ever, and it's just a small update with some slight adjustments and bug fixes!</p>
-        <!-- You can add an image/banner here -->
-        
-        <p>
-        </p>
-    </div>
-
-    <div class="info-bokss">
-        <div class="info-title">The site is up!</div>
-        <p>Tuesday 11-09-2023
-        </p>
-        <p>
-            The site is up! 
-            Go check out some of our features, such as calculating your level, exploring other users projects, or advertise your own. 
-            And even go talk to other users on the forum!
-            Have a good time using our website!</p>
-        <!-- You can add an image/banner here -->
-        
-        <p>
-        </p>
-    </div>
-
-
-    <footer>
-        <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
-        <a href="rules.html">Roblogs Guidelines</a></p>
-        <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
-        <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
-      </footer>
-
 
 </body>
 </html>
