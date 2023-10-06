@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
 
-            <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP7KLG03D6"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJV28T664W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-BP7KLG03D6');
+  gtag('config', 'G-RJV28T664W');
 </script>
-
     
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
@@ -39,6 +38,7 @@
             margin-top: -4.0cm; /* Flyt logoet lidt op for at reducere afstanden til navigationen */
         }
 
+        /* Center the navbar and create equal space on both sides */
         .navbar {
     background-color: rgb(6, 9, 21);
     height: 1cm;
@@ -47,7 +47,8 @@
     align-items: center;
     padding: 0 20px;
     width: 932px; /* Set the maximum width to make it centered */
-    margin: 0 auto; /* Center the navbar horizontally */
+    margin: 
+    0 auto; /* Center the navbar horizontally */
 }
 
 .infobanner {
@@ -60,15 +61,11 @@
     margin: 0 auto; /* Center the navbar horizontally */
 }
 
-.container {
-        width: 1000px; /* Set the fixed width of your container */
-        margin: 0 auto; /* Center the container horizontally */
-        overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
-    }
 
+
+        /* Optional: Adjust button styling for better alignment */
         .navbar-text {
-            color: white;
-            font-size: 20px;
+            padding: 10px; /* Add some padding to the buttons for spacing */
         }
 
         /* Juster margen til de midterste tekster */
@@ -102,23 +99,66 @@
             padding: 3px;
         }
 
+        .welcome-title {
+            background-color: rgb(6, 9, 21);
+            color: white;
+            font-size: 30px;
+            padding: 3px;
+        }
+
+        .info-box {
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    margin: 75px auto; /* Juster marginen, hvis nødvendigt */
+    padding: 0px;
+    width: 750px; /* Juster bredden efter behov */
+    height: 608px; /* Juster højden efter behov */
+}
+
 
         .info-boks {
             text-align: center;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 700px; /* Adjust the width as needed */
-            height: 300px;
+            max-width: 600px; /* Adjust the width as needed */
+            height: 375px;
         }
 
-        .info-bokss {
+        .info-box5 {
             text-align: center;
             background-color: rgb(255, 255, 255);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 700px; /* Adjust the width as needed */
-            height: 125px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 375px;
+        }
+
+        .info-boksssi {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 375px;
+        }
+
+        .info-blogpost {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 425px;
+        }
+
+        .info-newspost {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 250px;
         }
 
         .left-banner,
@@ -129,11 +169,6 @@
             width: 100px; /* Adjust the width of the banners as needed */
             background-color: #ffffff; /* Change the background color as needed */
             z-index: 1; /* Ensure banners are in front of other content */
-        }
-
-        .navbar a {
-            text-decoration: none; /* Fjern understregning */
-            color: white; /* Indstil farve på linktekst efter behov */
         }
 
         .left-banner {
@@ -151,11 +186,16 @@
         }
 
 
+        .navbar a {
+            text-decoration: none; /* Fjern understregning */
+            color: white; /* Indstil farve på linktekst efter behov */
+        }
+
+
         .info-boks img {
     max-width: 600px; /* Juster bredden efter dine præferencer */
     max-height: 600px; /* Juster højden efter dine præferencer */
 }
-
 
 footer {
   text-align: center;
@@ -163,6 +203,13 @@ footer {
   background-color: rgb(6, 9, 21);
   color: white;
 }
+
+.container {
+        width: 1000px; /* Set the fixed width of your container */
+        margin: 0 auto; /* Center the container horizontally */
+        overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
+    }
+
 
 
 
@@ -250,33 +297,51 @@ body {
     
             <div class="left-content">
                 
-                <a href="rules.html"><span class="left-text"><b>Rules</b></span></a>
+                <a href="rules.html"><span class="left-text">Rules</span></a>
             </div>
     
     
             <!-- More navbar content here... -->
         </div>
 
-       
+        
     
-        <div class="info-boks">
-            <div class="info-title">Roblogs Official Rules</div>
-            <p></p>
-            <!-- You can add an image/banner here -->
+        <div class="info-box">
+            <div class="info-title" style="text-align: center;">Roblogs</div>
+            <div style="text-align: center;">
+                <p>Roblogs's ROBLOGS:</p>
+                <p><a href="https://roblogs.net/roblogs">https://roblogs.net/roblogs</a></p>
+                
+                <p>&#8203 </p>
+                <p>&#8203 </p>
+                <p><img src="Roblogs Account.png" alt="events" style="max-width: 300px; float: left;">
+    
+                <div style="text-align: left;">
+                    <p><a href="https://www.roblox.com/messages/compose?recipientId=18177593" style="text-decoration: none;">Send Message</a>
+                    <p><a href="" style="text-decoration: none;">Send Friend Request</a>
+                    <p>Welcome to the official Roblogs account!</p>
+                    <p>This is Roblogs's administrator account, used to upload and post stuff to the website.</p>
+                    <p>Roblogs is a Roblox fansite, dedicated to reimagining and revitalizing the best parts about the earliest era of Roblox, while gathering a community.</p>
+                    <p>Site founded, and created by <a href="https://roblogs.net/freakyfinder">freakyfinder</a> and <a href="https://roblogs.net/insaneshane">insaneshane</a>. </p>
+                    <p>&#8203 </p>
+                    <p>&#8203 </p>
+                    <p>&#8203 </p>
+                    
+                    
+                    
+                </div>
+    
+                
+                
+                    
+                    
+                
+                
+            </div>
             
-            <p>First, I would like to point out that you should use common sense. There will always be unwritten rules, but if you use your head and common sense, it wouldn't be a problem. These rules will also apply to the Roblox group, and Discord server. We will not tolerate any racism, sexism or anything like that. Treat others with respect, as you would do in real life. Of course we don't allow any porn, or anything like that, but mature topics in forms of swearing are allowed. On this site, you can advertise what you want, as long as it stays Roblox related. You can advertise your game, group, work, website as long as it is Roblox related. For example, if you just release your brand new steam game, you are not allowed to advertise it, but you are allowed to advertise your Roblox game. Also, let's try to keep spamming and other bug abuse related stuff from happening. Thank you for keeping the community safe.
-            </p>
-        </div>
-    
-        <div class="info-bokss">
-            <div class="info-title">Support</div>
-            <p></p>
-            <!-- You can add an image/banner here -->
             
-            <p>If you ever need any support from the staff team, or need to report anybody abusing these rules, just join the discord. <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
-            </p>
         </div>
-    
+        
     
         <footer>
             <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>

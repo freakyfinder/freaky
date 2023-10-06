@@ -2,16 +2,15 @@
 <html lang="en">
 <head>
 
-            <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BP7KLG03D6"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RJV28T664W"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-BP7KLG03D6');
+  gtag('config', 'G-RJV28T664W');
 </script>
-
     
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
@@ -39,6 +38,7 @@
             margin-top: -4.0cm; /* Flyt logoet lidt op for at reducere afstanden til navigationen */
         }
 
+        /* Center the navbar and create equal space on both sides */
         .navbar {
     background-color: rgb(6, 9, 21);
     height: 1cm;
@@ -66,9 +66,11 @@
         overflow-x: hidden; /* Hide horizontal scrollbar if content overflows */
     }
 
+
+
+        /* Optional: Adjust button styling for better alignment */
         .navbar-text {
-            color: white;
-            font-size: 20px;
+            padding: 10px; /* Add some padding to the buttons for spacing */
         }
 
         /* Juster margen til de midterste tekster */
@@ -102,23 +104,75 @@
             padding: 3px;
         }
 
+        .welcome-title {
+            background-color: rgb(6, 9, 21);
+            color: white;
+            font-size: 30px;
+            padding: 3px;
+        }
+
+        .info-box {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin: 75px auto; /* Juster marginen, hvis nødvendigt */
+    padding: 0px;
+    width: 500px; /* Juster bredden efter behov */
+    height: 1125px; /* Juster højden efter behov */
+}
+
+.info-box-left {
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    margin: 75px auto; /* Juster marginen, hvis nødvendigt */
+    padding: 0px;
+    width: 333px; /* Juster bredden efter behov */
+    height: 1075px; /* Juster højden efter behov */
+}
+
 
         .info-boks {
             text-align: center;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 700px; /* Adjust the width as needed */
-            height: 300px;
+            max-width: 600px; /* Adjust the width as needed */
+            height: 375px;
         }
 
-        .info-bokss {
+        .info-box5 {
             text-align: center;
             background-color: rgb(255, 255, 255);
             margin: 120px auto; /* Adjust the margin-top value to move it further down */
             padding: 0px;
-            max-width: 700px; /* Adjust the width as needed */
-            height: 125px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 375px;
+        }
+
+        .info-boksssi {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 375px;
+        }
+
+        .info-blogpost {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 425px;
+        }
+
+        .info-newspost {
+            text-align: center;
+            background-color: rgb(255, 255, 255);
+            margin: 120px auto; /* Adjust the margin-top value to move it further down */
+            padding: 0px;
+            max-width: 800px; /* Adjust the width as needed */
+            height: 250px;
         }
 
         .left-banner,
@@ -129,11 +183,6 @@
             width: 100px; /* Adjust the width of the banners as needed */
             background-color: #ffffff; /* Change the background color as needed */
             z-index: 1; /* Ensure banners are in front of other content */
-        }
-
-        .navbar a {
-            text-decoration: none; /* Fjern understregning */
-            color: white; /* Indstil farve på linktekst efter behov */
         }
 
         .left-banner {
@@ -151,11 +200,16 @@
         }
 
 
+        .navbar a {
+            text-decoration: none; /* Fjern understregning */
+            color: white; /* Indstil farve på linktekst efter behov */
+        }
+
+
         .info-boks img {
     max-width: 600px; /* Juster bredden efter dine præferencer */
     max-height: 600px; /* Juster højden efter dine præferencer */
 }
-
 
 footer {
   text-align: center;
@@ -163,6 +217,9 @@ footer {
   background-color: rgb(6, 9, 21);
   color: white;
 }
+
+
+
 
 
 
@@ -193,7 +250,7 @@ body {
     
             <div class="left-content">
                 
-                <a href="games.html"><span class="left-text">Games</span></a>
+                <a href="games.html"><span class="left-text"><b>Games</b></span></a>
             </div>
     
             
@@ -250,33 +307,46 @@ body {
     
             <div class="left-content">
                 
-                <a href="rules.html"><span class="left-text"><b>Rules</b></span></a>
+                <a href="rules.html"><span class="left-text">Rules</span></a>
             </div>
     
     
             <!-- More navbar content here... -->
         </div>
 
-       
+        
     
-        <div class="info-boks">
-            <div class="info-title">Roblogs Official Rules</div>
-            <p></p>
-            <!-- You can add an image/banner here -->
-            
-            <p>First, I would like to point out that you should use common sense. There will always be unwritten rules, but if you use your head and common sense, it wouldn't be a problem. These rules will also apply to the Roblox group, and Discord server. We will not tolerate any racism, sexism or anything like that. Treat others with respect, as you would do in real life. Of course we don't allow any porn, or anything like that, but mature topics in forms of swearing are allowed. On this site, you can advertise what you want, as long as it stays Roblox related. You can advertise your game, group, work, website as long as it is Roblox related. For example, if you just release your brand new steam game, you are not allowed to advertise it, but you are allowed to advertise your Roblox game. Also, let's try to keep spamming and other bug abuse related stuff from happening. Thank you for keeping the community safe.
-            </p>
-        </div>
+        <div class="info-box">
+            <div class="info-title">Discover Old Games</div>
+            <p>Page 1 of 3 <a href="games2.html">Next >></a></p>
+            <p><a href="https://www.roblox.com/games/487316/Sword-Fight-on-the-Heights-Original" style="float: center;">
+                <img src="sfoth.png" alt="sfoth" style="width: 250px;">
+            </a> </p>
+            <p style="font-size: 15px;"><a href="https://www.roblox.com/games/487316/Sword-Fight-on-the-Heights-Original">Sword Fight on the Heights Original</a></p>
+            <p style="font-size: 13px;"><b>Creator: </b><a href="https://www.roblox.com/users/261/profile/">Shedletsky</a></p>
     
-        <div class="info-bokss">
-            <div class="info-title">Support</div>
-            <p></p>
-            <!-- You can add an image/banner here -->
-            
-            <p>If you ever need any support from the staff team, or need to report anybody abusing these rules, just join the discord. <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
-            </p>
-        </div>
     
+            <p><a href="https://www.roblox.com/games/47324/Sword-Fights-on-the-Heights-IV" style="float: center;">
+                <img src="sfothiv.png" alt="sfothiv" style="width: 250px;">
+            </a> </p>
+            <p style="font-size: 15px;"><a href="https://www.roblox.com/games/47324/Sword-Fights-on-the-Heights-IV">Sword Fight on the Heights IV</a></p>
+            <p style="font-size: 13px;"><b>Creator: </b><a href="https://www.roblox.com/users/261/profile/">Shedletsky</a></p>
+    
+            <p><a href="https://www.roblox.com/games/189707/Natural-Disaster-Survival" style="float: center;">
+                <img src="nds.png" alt="nds" style="width: 250px;">
+            </a> </p>
+            <p style="font-size: 15px;"><a href="https://www.roblox.com/games/189707/Natural-Disaster-Survival">Natural Disaster Survival</a></p>
+            <p style="font-size: 13px;"><b>Creator: </b><a href="https://www.roblox.com/users/80254/profile/">Stickmasterluke</a></p>
+    
+            <p><a href="https://www.roblox.com/games/4068198/Jet-Wars-Advanced-Battle#ropro-quick-search" style="float: center;">
+                <img src="jwab.png" alt="jwab" style="width: 250px;">
+            </a> </p>
+            <p style="font-size: 15px;"><a href="https://www.roblox.com/games/4068198/Jet-Wars-Advanced-Battle#ropro-quick-search">Jet Wars: Advanced Battle</a></p>
+            <p style="font-size: 13px;"><b>Creator: </b><a href="https://www.roblox.com/users/813527/profile/">Carbon131</a></p>
+    
+            <p style="font-size: 18px;">Want to put a game on this page? <a href="https://forms.gle/R77EZdTmT3ecCcvf6">Submit here!</a></p>
+        </div>  
+        
     
         <footer>
             <p>Roblogs - 2023. Site founded by freakyfinder & insaneshane. Developed by freakyfinder & lagkagewille - Roblogs is NOT affiliated with the Roblox Corp in any way.<br>
