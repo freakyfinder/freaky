@@ -116,8 +116,17 @@
     background-color: rgb(255, 255, 255);
     margin: 75px auto; /* Juster marginen, hvis nødvendigt */
     padding: 0px;
-    width: 750px; /* Juster bredden efter behov */
-    height: 635px; /* Juster højden efter behov */
+    width: 550px; /* Juster bredden efter behov */
+    height: 575px; /* Juster højden efter behov */
+}
+
+.info-box2 {
+    text-align: left;
+    background-color: rgb(255, 255, 255);
+    margin: 75px auto; /* Juster marginen, hvis nødvendigt */
+    padding: 0px;
+    width: 445px; /* Juster bredden efter behov */
+    height: 575px; /* Juster højden efter behov */
 }
 
 
@@ -201,6 +210,7 @@
     max-width: 600px; /* Juster bredden efter dine præferencer */
     max-height: 600px; /* Juster højden efter dine præferencer */
 }
+
 
 footer {
   text-align: center;
@@ -305,32 +315,74 @@ body {
             <!-- More navbar content here... -->
         </div>
 
-        
-    
-        <div class="info-box">
+
+
+
+
+
+        <div class="info-box" style="display: inline-block; vertical-align: top;">
             <div class="info-title" style="text-align: center;">&#8203 Hi, <b>guest</b>!</div>
             <div style="text-align: center;">
                 <p>Your ROBLOX:</p>
                 <p><a href="https://www.roblox.com/users/profile">https://www.roblox.com/users/profile</a></p>
-    
                 <p>&#8203 </p>
-                <p>&#8203 </p>
+                
                 <p><img src="guest.png" alt="events" style="max-width: 300px; float: left;">
-    
-                <p style="text-align: left;">&#8203 &#8203 <a href="https://www.roblox.com/my/messages/#!/inbox">Inbox</a></p>
-                <p style="text-align: left;">&#8203 &#8203 <a href="https://www.roblox.com/my/avatar">Change Character</a></p>
-                <p style="text-align: left;">&#8203 &#8203 <a href="https://www.roblox.com/my/account#!/info">Edit Profile</a></p>
-                <p style="text-align: left;">&#8203 &#8203 <a href="https://www.roblox.com/transactions">Account Balance</a></p>
-                <p style="text-align: left;">&#8203 &#8203 <a href="https://www.roblox.com/users/profile">View Public Profile</a></p>
-                <p style="text-align: left;">&#8203 &#8203 <a href="download.html">Create New Place</a>  (Using old clients)</p>
-                <p style="text-align: left;">&#8203 &#8203 <a href="https://www.roblox.com/trades">Trade</a></p>
-                <p style="text-align: left;">&#8203 &#8203 <a href="rules.html">Terms of use, and Rules</a></p>
+                <p style="text-align: left;">&#8203 <a href="create.html" style="text-decoration: none;">Create New Place</a></p>
+                <p style="text-align: left;">&#8203 <a href="toolbox.html" style="text-decoration: none;">Toolbox</a></p>
+                <p style="text-align: left;">&#8203 <a href="https://forms.gle/yCUV8fnkHhwVcDkR6" style="text-decoration: none;">Create Model</a></p>
+                <p style="text-align: left;">&#8203 <a href="editprofile.html" style="text-decoration: none;">Edit Profile</a></p>
+                <p style="text-align: left;">&#8203 <a href="forum.html" style="text-decoration: none;">Post on the forum</a></p>
+                <p style="text-align: left;">&#8203 <a href="https://discord.gg/p6GZqsk4gn" style="text-decoration: none;">Support</a></p>
+                <p style="text-align: left;">&#8203 <a href="https://discord.gg/p6GZqsk4gn" style="text-decoration: none;">Discord Server</a></p>
+                <p style="text-align: left;">&#8203 <a href="rules.html" style="text-decoration: none;">Terms of use, and Rules</a></p>
+            </div>
+        </div>
+
+
+        <div class="info-box2" style="display: inline-block; vertical-align: top;">
+            <div class="info-title" style="text-align: center;">&#8203 Showcase</div>
+            <div style="text-align: center;">
+                <p>Guest's place 1</p>
+                <hr>
+                <p>
+                    <a href="RoblogsStarterPlace.rbxm" download>
+                        <img src="PlayButton1.png" alt="events" style="height: 44px; float: left; margin-left: 2px;">
+                      </a>
+                      
+                      <a href="download.html" id="downloadLink">
+                        <img src="BuildButton.png" alt="events" style="height: 44px; float: right; margin-right: 2px;">
+                      </a>
+                      
+                      <script>
+                      document.getElementById("downloadLink").addEventListener("click", function(event) {
+                        // Forhindrer standardadfærd for ankeret (følg ikke linket)
+                        event.preventDefault();
+                        
+                        // Start download af filen "RoblogsStarterPlace.rbxm"
+                        var downloadLink = document.createElement("a");
+                        downloadLink.href = "RoblogsStarterPlace.rbxm";
+                        downloadLink.download = "RoblogsStarterPlace.rbxm";
+                        document.body.appendChild(downloadLink);
+                        downloadLink.click();
+                        document.body.removeChild(downloadLink);
+                        
+                        // Gå til "download.html" efter download er startet
+                        window.location.href = "download.html";
+                      });
+                      </script>
+                      
+                      
+                </p>
+                <img src="StarterPlaceThumbnail.png" alt="events" style="width: 400px; margin-top: 25px;">
+                <br>
+                <p>Welcome to Roblogs! <br>
+                This is the Roblogs starterplace, made and used in the old clients! Made by ZebraAgentLight</p>
                 
                 
             </div>
-            
-            
         </div>
+        
         
     
         <footer>
