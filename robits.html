@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/roblogs_logo3.png" type="image/x-icon">
+
+    <script src="script.js"></script>
+
 </head>
 <body>
 <div class="container">
@@ -126,6 +129,7 @@
             </a>
         </div>
 
+
         <div class="left-content2">
             <p>|</p>
         </div>
@@ -146,26 +150,124 @@
 
 
     
-    <div class="info-box-rules">
-        <div class="info-title1"><span class="text"><b>Rules</b></span>
+    <div class="info-box-robits">
+        <div class="info-title1"><span class="text"><b>Ro-Bits</b></span>
         </div>
-        <p style="text-align:center;">I will begin with the most important rule. You should use common sense. There will always be unwritten rules, but if you use your head and common sense, it wouldn't be a problem. These rules will also apply to the Roblox group, and Discord server. We will not tolerate any racism, sexism or anything like that. Treat others with respect, as you would do in real life. Of course we don't allow any porn, or anything like that, but mature topics in forms of swearing are allowed. On this site, you can advertise what you want, as long as it stays Roblox related. You can advertise your game, group, work, website as long as it is Roblox related. For example, if you just release your brand new steam game, you are not allowed to advertise it, but you are allowed to advertise your Roblox game. Also, let's try to keep spamming and other bug abuse related stuff from happening. Thank you for keeping the community safe.</p>
+        <div class="place-title">
+            <div class="left-align2">Ro-Bits is a currency, made by Roblogs.</div>
+            <div class="right-align2" style="margin-right: 5px; font-size: 14px;">
+                
+                <a href="robits.html" 
+   style="color: black; text-decoration: none;" 
+   onmouseover="this.style.textDecoration='underline'; this.style.color='tomato'" 
+   onmouseout="this.style.textDecoration='none'; this.style.color='black'">
+   <b>Home</b>
+</a>
 
+             </a>
+              <b> | </b> 
+              
+              <a href="robits-exchange.html" 
+   style="color: black; text-decoration: none;" 
+   onmouseover="this.style.textDecoration='underline'; this.style.color='tomato'" 
+   onmouseout="this.style.textDecoration='none'; this.style.color='black'">
+   <b>Exchange</b>
+</a>
+
+           </a>
+           <b> | </b>
+           <a href="robits-help.html" 
+   style="color: black; text-decoration: none;" 
+   onmouseover="this.style.textDecoration='underline'; this.style.color='tomato'" 
+   onmouseout="this.style.textDecoration='none'; this.style.color='black'">
+   <b>Help
+   </b>
+</a>
+
+
+        
+           </div>
+            
+        </div>
+        <p style="text-align:left;">Ro-Bits is a Roblogs currency, similar to tix. <br>You get +10 Ro-Bits for free every day, and you can then either spend the Ro-Bits on Roblogs, or trade them with other users, for Robux. 
+        </p>
+        <p style="text-align:left;">Read more about Ro-Bits <a href="robits-help.html">here</a>.</p>
+
+    
         
         </div>
 
+    <div class="info-box2">
+        <div class="info-title1"><span class="text"><b>Recommended Place - Jet Wars</b></span>
+        </div>
+        <p style="text-align: center;">
+            <a href="https://www.roblox.com/games/4068198/Jet-Wars-Advanced-Battle#ropro-quick-search">
+                <img src="images/recommendedgamejwab.png" style="height: 100px; margin:  auto; display: block;">
+            </a></p>
+    </div>
+
+    <div class="info-box2">
+        <div class="info-title1"><span class="text"><b>Current Event</b></span>
+        </div>
+        <p style="text-align: center;">Roblogs Ultimate Paintball Tournament <br><a href="events.html">Read More</a> <br>
+            <img src="images/Paintball Trophy.png" style="height: 75px; margin:  auto; display: block;"></p>
+    </div>
+
+    <div class="info-box14 box1">
+        <div class="info-title3"><b>Ro-Bits Code</b></div>
+        <div class="user-list1">
+            <div class="center-align"><b>Enter this code inside the Ro-Bits game, to recieve +10 Ro-Bits for free. <br>This code updates every day.</b>
+                  </div>
+
+        
+            
+            
+        </div>
+
+        
+
+        <p style="text-align:center; font-size:27px;" id="dynamicText">Code (This text will change)</p>
+        <p style="text-align:center; font-size:18px; margin-top: -25px;">(Changes every day UTC time)</p>
+
+<script>
+  function generateCode() {
+    var today = new Date();
+    var dayUTC = today.getUTCDate();
+    var monthUTC = today.getUTCMonth() + 1;
+    var yearUTC = today.getUTCFullYear();
+    var code = yearUTC * dayUTC * monthUTC - yearUTC + dayUTC * 100;
+
+    // Hent HTML-elementet med id 'dynamicText'
+    var dynamicTextElement = document.getElementById('dynamicText');
+
+    // Opdater tekstindholdet med den genererede kode
+    dynamicTextElement.innerHTML = 'Daily +10 Ro-Bit code:<br> X' + code;
+  }
+
+  // Kald funktionen for at generere koden ved indlæsning af siden
+  generateCode();
+</script>
 
 
 
 
-
-
-
+        
+        
+        <br>
+<div class="center-align" style="font-size: 18px; margin-top:-5px;">Enter the code here: <a href="linkhere">robloxgamelinkhere</a>
+</div>
+        
+    </div>
 
 
     
 
-
+    <br>
+    <br>
+    <br>
+    
+    
+    
 
 
 

@@ -13,7 +13,7 @@
     <div class="header">
         <a href="index.html">
             <img src="images/RoblogsBanner2.png" alt="Logo" class="logo" style="width: 970px; margin-bottom: -2.4px; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000;">
-        </a>  
+        </a>      
     </div>
     <div class="navbar">
     
@@ -146,32 +146,96 @@
 
 
     
-    <div class="info-box-rules">
-        <div class="info-title1"><span class="text"><b>Rules</b></span>
+    <div class="info-box8">
+        <div class="info-title1"><span class="text"><b>Level Calculator</b></span>
         </div>
-        <p style="text-align:center;">I will begin with the most important rule. You should use common sense. There will always be unwritten rules, but if you use your head and common sense, it wouldn't be a problem. These rules will also apply to the Roblox group, and Discord server. We will not tolerate any racism, sexism or anything like that. Treat others with respect, as you would do in real life. Of course we don't allow any porn, or anything like that, but mature topics in forms of swearing are allowed. On this site, you can advertise what you want, as long as it stays Roblox related. You can advertise your game, group, work, website as long as it is Roblox related. For example, if you just release your brand new steam game, you are not allowed to advertise it, but you are allowed to advertise your Roblox game. Also, let's try to keep spamming and other bug abuse related stuff from happening. Thank you for keeping the community safe.</p>
+        <p style="text-align:center;">This calculator is based on Miked's and Clockwork's level calculator formula, but it has been updated with current stats to match the original level calculator. <br>
+            It also shows how likely you would have been chosen for BC back in 2007 and overall gives you a number indicating how worthy of a Robloxian you are.
+        <br>Enter your stats to see your level!</p>
+    </div>
 
+    <div class="info-box2">
+        <div class="info-title1"><span class="text"><b>Recommended Place - Jet Wars</b></span>
+        </div>
+        <p style="text-align: center;">
+            <a href="https://www.roblox.com/games/4068198/Jet-Wars-Advanced-Battle#ropro-quick-search">
+                <img src="images/recommendedgamejwab.png" style="height: 100px; margin:  auto; display: block;">
+            </a></p>
+    </div>
+
+    <div class="info-box2">
+        <div class="info-title1"><span class="text"><b>Current Event</b></span>
+        </div>
+        <p style="text-align: center;">Roblogs Ultimate Paintball Tournament <br><a href="events.html">Read More</a> <br>
+            <img src="images/Paintball Trophy.png" style="height: 75px; margin:  auto; display: block;"></p>
+    </div>
+
+
+    <div class="info-box6 box1">
         
+        <div class="info-title2"><span class="text"><b>Calculator</b></span>
         </div>
-
-
-
-
-
-
-
-
-
-
+        <form id="inputForm" style="margin-top: 17px;">
+            <label for="accountYears">Account Years:</label>
+            <input type="number" id="accountYears" name="accountYears" value=""><br>
+        
+            <label for="badges">Official Roblox Badges:</label>
+            <input type="number" id="badges" name="badges" value=""><br>
+        
+            <label for="friends">Friends:</label>
+            <input type="number" id="friends" name="friends" value=""><br>
+        
+            <label for="followers">Followers:</label>
+            <input type="number" id="followers" name="followers" value=""><br>
+        
+            <label for="hats">Hats:</label>
+            <input type="number" id="hats" name="hats" value=""><br>
+        
+            <label for="placeVisits">Place Visits:</label>
+            <input type="number" id="placeVisits" name="placeVisits" value=""><br>
+        
+            <input type="button" value="Calculate" onclick="beregnResultat()">
+        </form>
+        
+        
+            <div id="resultat"></div>
     
+        
+            <script>
+                function beregnResultat() {
+                    // Hent værdierne fra inputfelterne
+                    const accountYears = parseFloat(document.getElementById("accountYears").value);
+                    const badges = parseFloat(document.getElementById("badges").value);
+                    const friends = parseFloat(document.getElementById("friends").value);
+                    const followers = parseFloat(document.getElementById("followers").value);
+                    const hats = parseFloat(document.getElementById("hats").value);
+                    const placeVisits = parseFloat(document.getElementById("placeVisits").value);
+        
+                    // Beregn resultatet af den komplekse formel
+                    const result = (30 * (-1 / (1 * accountYears * badges + 0.365) + 1) +
+                        (10 * (-1 / (friends / 200 + 1) + 1) + 15 * (-1 / (followers / 3000 + 1) + 1)) +
+                        (25 * (hats / (hats + 4)) ** 2 + 2 * (hats / (hats + 5)) ** 2) +
+                        50 * (-1 / (1.2 * placeVisits / 25000 + 1) + 1));
+        
+                    // Vis resultatet på siden
+                    document.getElementById("resultat").innerHTML = "Your level is: " + result;
+                    
+                    
+                }
+            </script>
+            </p>
+
+    </div>
 
 
+    <div class="info-box7 box2">
+    
+        
+        <p><b>If you get NaN for your result, it means one of your numbers wasn't typed like a number.</b></p>
+            
+        
 
-
-
-
-   
-
+    </div>
     
 
     <hr>
