@@ -237,14 +237,10 @@
     var yearUTC = today.getUTCFullYear();
     var code = yearUTC * dayUTC * monthUTC - yearUTC + dayUTC * 100;
 
-    // Hent HTML-elementet med id 'dynamicText'
     var dynamicTextElement = document.getElementById('dynamicText');
 
-    // Opdater tekstindholdet med den genererede kode
     dynamicTextElement.innerHTML = 'Daily +10 Ro-Bit code:<br> X' + code;
   }
-
-  // Kald funktionen for at generere koden ved indlæsning af siden
   generateCode();
 </script>
 
@@ -256,6 +252,13 @@
         <br>
 <div class="center-align" style="font-size: 18px; margin-top:-5px;">Enter the code <a href="https://www.roblox.com/games/15099614755/Ro-Bits-v1-0-beta">Here!</a>
 </div>
+        
+    </div>
+
+    <div class="info-box" style="height: 117px;">
+        <div class="info-title2"><b>Whitepaper</b></div>
+        <p>Read the whitepaper written by freakyfinder, to get a better understanding of what Ro-Bits is.</p>
+        <p><a href="Ro-Bits.pdf">Ro-Bits: A Free To Earn Roblox Currency</a></p>
         
     </div>
 
