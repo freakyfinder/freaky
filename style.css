@@ -461,6 +461,17 @@ body{
     height: 18px;
 }
 
+.info-date2 {
+    border-bottom: solid;
+    border-top: solid;
+    border-width: 1px;
+    text-align: left;
+    font-size: 13px;
+    padding: 0px;
+    max-width: 1000px;
+    height: 18px;
+}
+
 .info-date .text {
     margin-left: 3px;
 }
