@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblogs</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/roblogs_logo3.png" type="image/x-icon">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2485467644084637"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="index.html">
+                <img src="images/RoblogsBanner2.png" alt="Logo" class="logo" style="width: 970px; margin-bottom: -2.4px; border-left: 1px solid #000; border-right: 1px solid #000; border-top: 1px solid #000;">
+            </a>  
+        </div>
+        <div class="navbar">
+
+        
+       
+
+        
+        
+       
+
+            <div class="left-content">
+                <a href="index.html" class="no-underline">
+                  <span class="left-text" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Home</span>
+                </a>
+            </div>
+    
+    
+            <div class="left-content2">
+                <p>|</p>
+            </div>
+    
+            
+            
+    
+            <div class="left-content">
+                <a href="places.html" class="no-underline">
+                  <span class="left-text" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Browse</span>
+                </a>
+            </div>
+    
+    
+            <div class="left-content2">
+                <p>|</p>
+            </div>
+    
+            
+    
+         
+    
+            <div class="left-content">
+                <a href="multiplayer.html" class="no-underline">
+                  <span class="left-text" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Multiplayer</span>
+                </a>
+            </div>
+    
+            
+    
+    
+            <div class="left-content2">
+                <p>|</p>
+            </div>
+    
+    
+            <div class="left-content">
+                <a href="forum.html" class="no-underline">
+                  <span class="left-text" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Forum</span>
+                </a>
+            </div>
+    
+            
+            <div class="left-content2">
+                <p>|</p>
+            </div>
+    
+    
+    
+            <div class="left-content">
+                <a href="blog.html" class="no-underline">
+                  <span class="left-text" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Blog</span>
+                </a>
+            </div>
+    
+    
+            <div class="left-content2">
+                <p>|</p>
+            </div>
+    
+              
+              
+            
+    
+    
+    
+            <div class="left-content">
+                <a href="robits.html" class="no-underline">
+                  <span class="left-text" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">Ro-Bits</span>
+                </a>
+            </div>
+    
+    
+    
+            <!-- More navbar content here... -->
+        </div>
+
+
+
+
+    
+    <div class="info-box8" style="height: 100%;">
+        
+        <p style="text-align:center;">This calculator is based on Miked's and Clockwork's level calculator formula, but it has been updated with current stats to match the original level calculator. <br>
+            It also shows how likely you would have been chosen for BC back in 2007 and overall gives you a number indicating how worthy of a Robloxian you are.
+        <br>Enter your stats to see your level!</p>
+    </div>
+
+    
+
+
+    <div class="info-box6 box2" style="height:100%; margin-left: 165px;">
+        
+        <p style="font-size: 17px; text-align: center; margin-top:10px; margin-bottom: -5px;"><b>Level Calculator</b></p>
+        <form id="inputForm" style="margin-top: 17px;">
+            <label for="accountYears">Account Years:</label>
+            <input type="number" id="accountYears" name="accountYears" value=""><br>
+        
+            <label for="badges">Official Roblox Badges:</label>
+            <input type="number" id="badges" name="badges" value=""><br>
+        
+            <label for="friends">Friends:</label>
+            <input type="number" id="friends" name="friends" value=""><br>
+        
+            <label for="followers">Followers:</label>
+            <input type="number" id="followers" name="followers" value=""><br>
+        
+            <label for="hats">Hats:</label>
+            <input type="number" id="hats" name="hats" value=""><br>
+        
+            <label for="placeVisits">Place Visits:</label>
+            <input type="number" id="placeVisits" name="placeVisits" value=""><br>
+        
+            <input type="button" value="Calculate" onclick="beregnResultat()">
+        </form>
+        
+        
+            <div id="resultat"></div>
+    
+        
+            <script>
+                function beregnResultat() {
+                    // Hent værdierne fra inputfelterne
+                    const accountYears = parseFloat(document.getElementById("accountYears").value);
+                    const badges = parseFloat(document.getElementById("badges").value);
+                    const friends = parseFloat(document.getElementById("friends").value);
+                    const followers = parseFloat(document.getElementById("followers").value);
+                    const hats = parseFloat(document.getElementById("hats").value);
+                    const placeVisits = parseFloat(document.getElementById("placeVisits").value);
+        
+                    // Beregn resultatet af den komplekse formel
+                    const result = (30 * (-1 / (1 * accountYears * badges + 0.365) + 1) +
+                        (10 * (-1 / (friends / 200 + 1) + 1) + 15 * (-1 / (followers / 3000 + 1) + 1)) +
+                        (25 * (hats / (hats + 4)) ** 2 + 2 * (hats / (hats + 5)) ** 2) +
+                        50 * (-1 / (1.2 * placeVisits / 25000 + 1) + 1));
+        
+                    // Vis resultatet på siden
+                    document.getElementById("resultat").innerHTML = "Your level is: " + result;
+                    
+                    
+                }
+            </script>
+            </p>
+
+    </div>
+
+
+    
+    
+
+    <hr>
+    <div class="footer">
+        <p style="text-align:center;">Roblogs - 2023-2024. Site founded by freakyfinder & insaneshane. 
+            Site developed by freakyfinder - Roblogs is <b>NOT</b> affiliated with the Roblox Corp in any way.</p>
+            <p style="text-align:center;"><a href="rules.html">Roblogs Guidelines</a></p>
+            <a href="https://discord.gg/p6GZqsk4gn">Roblogs Official Discord</a></p>
+            <a href="https://www.roblox.com/groups/33030650/Roblogs-Group">Roblogs Official Roblox Group</a></p>
+    </div>
+</div>
+    
+    
+</body>
+</html>
