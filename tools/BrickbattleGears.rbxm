@@ -1,0 +1,943 @@
+<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+	<External>null</External>
+	<External>nil</External>
+	<Item class="Tool" referent="RBX0">
+		<Properties>
+			<int name="ActivationState">0</int>
+			<int name="BackendToolState">1</int>
+			<bool name="Enabled">true</bool>
+			<CoordinateFrame name="Grip">
+				<X>0</X>
+				<Y>0</Y>
+				<Z>-1.5</Z>
+				<R00>0</R00>
+				<R01>0</R01>
+				<R02>1</R02>
+				<R10>1</R10>
+				<R11>0</R11>
+				<R12>0</R12>
+				<R20>0</R20>
+				<R21>1</R21>
+				<R22>0</R22>
+			</CoordinateFrame>
+			<string name="Name">ClassicSword</string>
+			<Content name="TextureId"><url>rbxasset://Textures\Sword128.png</url></Content>
+			<bool name="archivable">true</bool>
+		</Properties>
+		<Item class="Script" referent="RBX1">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Swordscript</string>
+				<string name="Source">r = game:service(&quot;RunService&quot;)&#13;&#10;&#13;&#10;&#13;&#10;local damage = 5&#13;&#10;&#13;&#10;&#13;&#10;local slash_damage = 10&#13;&#10;local lunge_damage = 30&#13;&#10;&#13;&#10;sword = script.Parent.Handle&#13;&#10;Tool = script.Parent&#13;&#10;&#13;&#10;&#13;&#10;local SlashSound = Instance.new(&quot;Sound&quot;)&#13;&#10;SlashSound.SoundId = &quot;rbxasset://sounds\\swordslash.wav&quot;&#13;&#10;SlashSound.Parent = sword&#13;&#10;SlashSound.Volume = .7&#13;&#10;&#13;&#10;local LungeSound = Instance.new(&quot;Sound&quot;)&#13;&#10;LungeSound.SoundId = &quot;rbxasset://sounds\\swordlunge.wav&quot;&#13;&#10;LungeSound.Parent = sword&#13;&#10;LungeSound.Volume = .6&#13;&#10;&#13;&#10;local UnsheathSound = Instance.new(&quot;Sound&quot;)&#13;&#10;UnsheathSound.SoundId = &quot;rbxasset://sounds\\unsheath.wav&quot;&#13;&#10;UnsheathSound.Parent = sword&#13;&#10;UnsheathSound.Volume = 1&#13;&#10;&#13;&#10;&#13;&#10;function blow(hit)&#13;&#10;&#9;if (hit.Parent == nil) then return end -- happens when bullet hits sword&#13;&#10;&#13;&#10;&#9;local humanoid = hit.Parent:findFirstChild(&quot;Humanoid&quot;)&#13;&#10;&#9;local vCharacter = Tool.Parent&#13;&#10;&#9;local vPlayer = game.Players:playerFromCharacter(vCharacter)&#13;&#10;&#9;local hum = vCharacter:findFirstChild(&quot;Humanoid&quot;) -- non-nil if tool held by a character&#13;&#10;&#9;if humanoid~=nil and humanoid ~= hum and hum ~= nil then&#13;&#10;&#9;&#9;-- final check, make sure sword is in-hand&#13;&#10;&#13;&#10;&#9;&#9;local right_arm = vCharacter:FindFirstChild(&quot;Right Arm&quot;)&#13;&#10;&#9;&#9;if (right_arm ~= nil) then&#13;&#10;&#9;&#9;&#9;local joint = right_arm:FindFirstChild(&quot;RightGrip&quot;)&#13;&#10;&#9;&#9;&#9;if (joint ~= nil and (joint.Part0 == sword or joint.Part1 == sword)) then&#13;&#10;&#9;&#9;&#9;&#9;tagHumanoid(humanoid, vPlayer)&#13;&#10;&#9;&#9;&#9;&#9;humanoid.Health = humanoid.Health - damage&#13;&#10;&#9;&#9;&#9;&#9;wait(1)&#13;&#10;&#9;&#9;&#9;&#9;untagHumanoid(humanoid)&#13;&#10;&#9;&#9;&#9;end&#13;&#10;&#9;&#9;end&#13;&#10;&#13;&#10;&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;function tagHumanoid(humanoid, player)&#13;&#10;&#9;local creator_tag = Instance.new(&quot;ObjectValue&quot;)&#13;&#10;&#9;creator_tag.Value = player&#13;&#10;&#9;creator_tag.Name = &quot;creator&quot;&#13;&#10;&#9;creator_tag.Parent = humanoid&#13;&#10;end&#13;&#10;&#13;&#10;function untagHumanoid(humanoid)&#13;&#10;&#9;if humanoid ~= nil then&#13;&#10;&#9;&#9;local tag = humanoid:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;&#9;if tag ~= nil then&#13;&#10;&#9;&#9;&#9;tag.Parent = nil&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;function attack()&#13;&#10;&#9;damage = slash_damage&#13;&#10;&#9;SlashSound:play()&#13;&#10;&#9;local anim = Instance.new(&quot;StringValue&quot;)&#13;&#10;&#9;anim.Name = &quot;toolanim&quot;&#13;&#10;&#9;anim.Value = &quot;Slash&quot;&#13;&#10;&#9;anim.Parent = Tool&#13;&#10;end&#13;&#10;&#13;&#10;function lunge()&#13;&#10;&#9;damage = lunge_damage&#13;&#10;&#13;&#10;&#9;LungeSound:play()&#13;&#10;&#13;&#10;&#9;local anim = Instance.new(&quot;StringValue&quot;)&#13;&#10;&#9;anim.Name = &quot;toolanim&quot;&#13;&#10;&#9;anim.Value = &quot;Lunge&quot;&#13;&#10;&#9;anim.Parent = Tool&#13;&#10;&#9;&#13;&#10;&#9;&#13;&#10;&#9;force = Instance.new(&quot;BodyVelocity&quot;)&#13;&#10;&#9;force.velocity = Vector3.new(0,10,0) --Tool.Parent.Torso.CFrame.lookVector * 80&#13;&#10;&#9;force.Parent = Tool.Parent.Torso&#13;&#10;&#9;wait(.25)&#13;&#10;&#9;swordOut()&#13;&#10;&#9;wait(.25)&#13;&#10;&#9;force.Parent = nil&#13;&#10;&#9;wait(.5)&#13;&#10;&#9;swordUp()&#13;&#10;&#13;&#10;&#9;damage = slash_damage&#13;&#10;end&#13;&#10;&#13;&#10;function swordUp()&#13;&#10;&#9;Tool.GripForward = Vector3.new(-1,0,0)&#13;&#10;&#9;Tool.GripRight = Vector3.new(0,1,0)&#13;&#10;&#9;Tool.GripUp = Vector3.new(0,0,1)&#13;&#10;end&#13;&#10;&#13;&#10;function swordOut()&#13;&#10;&#9;Tool.GripForward = Vector3.new(0,0,1)&#13;&#10;&#9;Tool.GripRight = Vector3.new(0,-1,0)&#13;&#10;&#9;Tool.GripUp = Vector3.new(-1,0,0)&#13;&#10;end&#13;&#10;&#13;&#10;function swordAcross()&#13;&#10;&#9;-- parry&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;Tool.Enabled = true&#13;&#10;local last_attack = 0&#13;&#10;function onActivated()&#13;&#10;&#13;&#10;&#9;if not Tool.Enabled then&#13;&#10;&#9;&#9;return&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;Tool.Enabled = false&#13;&#10;&#13;&#10;&#9;local character = Tool.Parent;&#13;&#10;&#9;local humanoid = character.Humanoid&#13;&#10;&#9;if humanoid == nil then&#13;&#10;&#9;&#9;print(&quot;Humanoid not found&quot;)&#13;&#10;&#9;&#9;return &#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;t = r.Stepped:wait()&#13;&#10;&#13;&#10;&#9;if (t - last_attack &lt; .2) then&#13;&#10;&#9;&#9;lunge()&#13;&#10;&#9;else&#13;&#10;&#9;&#9;attack()&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;last_attack = t&#13;&#10;&#13;&#10;&#9;--wait(.5)&#13;&#10;&#13;&#10;&#9;Tool.Enabled = true&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;function onEquipped()&#13;&#10;&#9;UnsheathSound:play()&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;script.Parent.Activated:connect(onActivated)&#13;&#10;script.Parent.Equipped:connect(onEquipped)&#13;&#10;&#13;&#10;&#13;&#10;connection = sword.Touched:connect(blow)&#13;&#10;&#13;&#10;&#13;&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+		<Item class="Part" referent="RBX2">
+			<Properties>
+				<bool name="Anchored">false</bool>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<int name="BrickColor">199</int>
+				<CoordinateFrame name="CFrame">
+					<X>-212</X>
+					<Y>12.8000002</Y>
+					<Z>-444.5</Z>
+					<R00>0</R00>
+					<R01>0</R01>
+					<R02>-1</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>-0</R12>
+					<R20>1</R20>
+					<R21>0</R21>
+					<R22>-0</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastsShadows">true</bool>
+				<token name="Controller">0</token>
+				<bool name="ControllerFlagShown">true</bool>
+				<bool name="Cullable">true</bool>
+				<bool name="DraggingV1">false</bool>
+				<float name="Elasticity">0.5</float>
+				<token name="FormFactor">2</token>
+				<float name="Friction">0.300000012</float>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<string name="Name">Handle</string>
+				<float name="Reflectance">0.400000006</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<bool name="archivable">true</bool>
+				<token name="shape">1</token>
+				<Vector3 name="size">
+					<X>1</X>
+					<Y>0.800000012</Y>
+					<Z>4</Z>
+				</Vector3>
+			</Properties>
+			<Item class="SpecialMesh" referent="RBX3">
+				<Properties>
+					<Content name="MeshId"><url>rbxasset://fonts/sword.mesh</url></Content>
+					<token name="MeshType">5</token>
+					<string name="Name">Mesh</string>
+					<Vector3 name="Scale">
+						<X>1</X>
+						<Y>1</Y>
+						<Z>1</Z>
+					</Vector3>
+					<Content name="TextureId"><url>rbxasset://textures/SwordTexture.png</url></Content>
+					<Vector3 name="VertexColor">
+						<X>1</X>
+						<Y>1</Y>
+						<Z>1</Z>
+					</Vector3>
+					<bool name="archivable">true</bool>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="LocalScript" referent="RBX4">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Local Gui</string>
+				<string name="Source">local Tool = script.Parent;&#13;&#10;&#13;&#10;enabled = true&#13;&#10;function onButton1Down(mouse)&#13;&#10;&#9;if not enabled then&#13;&#10;&#9;&#9;return&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;enabled = false&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunWaitCursor.png&quot;&#13;&#10;&#13;&#10;&#9;wait(.5)&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunCursor.png&quot;&#13;&#10;&#9;enabled = true&#13;&#10;&#13;&#10;end&#13;&#10;&#13;&#10;function onEquippedLocal(mouse)&#13;&#10;&#13;&#10;&#9;if mouse == nil then&#13;&#10;&#9;&#9;print(&quot;Mouse not found&quot;)&#13;&#10;&#9;&#9;return &#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunCursor.png&quot;&#13;&#10;&#9;mouse.Button1Down:connect(function() onButton1Down(mouse) end)&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;Tool.Equipped:connect(onEquippedLocal)</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+	</Item>
+	<Item class="HopperBin" referent="RBX5">
+		<Properties>
+			<token name="BinType">0</token>
+			<string name="Name">Wall</string>
+			<Content name="TextureId"><url>rbxasset://Textures\Wall.png</url></Content>
+			<bool name="archivable">true</bool>
+		</Properties>
+		<Item class="Script" referent="RBX6">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">WallScript</string>
+				<string name="Source">wallWait = 5&#13;&#10;&#13;&#10;function snap(v)&#13;&#10;&#9;if math.abs(v.x)&gt;math.abs(v.z) then&#13;&#10;&#9;&#9;if v.x&gt;0 then&#13;&#10;&#9;&#9;&#9;return Vector3.new(1,0,0)&#13;&#10;&#9;&#9;else&#13;&#10;&#9;&#9;&#9;return Vector3.new(-1,0,0)&#13;&#10;&#9;&#9;end&#13;&#10;&#9;else&#13;&#10;&#9;&#9;if v.z&gt;0 then&#13;&#10;&#9;&#9;&#9;return Vector3.new(0,0,1)&#13;&#10;&#9;&#9;else&#13;&#10;&#9;&#9;&#9;return Vector3.new(0,0,-1)&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;enabled = true&#13;&#10;function onButton1Down(mouse)&#13;&#10;&#9;if not enabled then&#13;&#10;&#9;&#9;return&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;enabled = false&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\ArrowFarCursor.png&quot;&#13;&#10;&#13;&#10;sound = Instance.new(&quot;Sound&quot;)&#13;&#10;&#9;&#9;sound.SoundId = &quot;rbxasset://sounds\\bass.wav&quot;&#13;&#10;&#9;&#9;sound.Parent = script.Parent&#13;&#10;&#13;&#10;&#9;&#9;sound:play()&#13;&#10;&#13;&#10;&#9;-- find the best cf&#13;&#10;&#9;local cf = mouse.Hit&#13;&#10;&#9;local lookAt = snap(cf.lookVector)&#13;&#10;&#9;cf = CFrame.new(cf.p, cf.p + lookAt)&#13;&#10;&#13;&#10;&#9;-- send a wall request to the game (possibly to another peer in multiplayer)&#13;&#10;&#9;local newWall = Instance.new(&quot;CFrameValue&quot;)&#13;&#10;&#9;newWall.Name = &quot;NewWall&quot;&#13;&#10;&#9;newWall.Value = cf&#13;&#10;&#9;newWall.Parent = game.Workspace.WallBuilder&#13;&#10;&#13;&#10;&#9;wait(wallWait)&#13;&#10;&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\ArrowCursor.png&quot;&#13;&#10;&#9;enabled = true&#13;&#10;&#13;&#10;&#13;&#10;end&#13;&#10;&#13;&#10;function onSelected(mouse)&#13;&#10;&#9;print(&quot;Wall selected&quot;)&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\ArrowCursor.png&quot;&#13;&#10;&#9;mouse.Button1Down:connect(function() onButton1Down(mouse) end)&#13;&#10;end&#13;&#10;&#13;&#10;script.Parent.Selected:connect(onSelected)&#13;&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+	</Item>
+	<Item class="Tool" referent="RBX7">
+		<Properties>
+			<int name="ActivationState">0</int>
+			<int name="BackendToolState">1</int>
+			<bool name="Enabled">true</bool>
+			<CoordinateFrame name="Grip">
+				<X>0</X>
+				<Y>0</Y>
+				<Z>0</Z>
+				<R00>1</R00>
+				<R01>0</R01>
+				<R02>0</R02>
+				<R10>0</R10>
+				<R11>0</R11>
+				<R12>-1</R12>
+				<R20>-0</R20>
+				<R21>1</R21>
+				<R22>0</R22>
+			</CoordinateFrame>
+			<string name="Name">ClassicTimebomb</string>
+			<Content name="TextureId"><url>rbxasset://Textures/Bomb.png</url></Content>
+			<bool name="archivable">true</bool>
+		</Properties>
+		<Item class="Part" referent="RBX8">
+			<Properties>
+				<bool name="Anchored">false</bool>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<int name="BrickColor">194</int>
+				<CoordinateFrame name="CFrame">
+					<X>-16.3574963</X>
+					<Y>4.5989399</Y>
+					<Z>-62.6951408</Z>
+					<R00>-0.999967933</R00>
+					<R01>-0.00797146745</R01>
+					<R02>-6.34748039e-006</R02>
+					<R10>-3.72146801e-012</R10>
+					<R11>-0.000796274282</R11>
+					<R12>0.999999642</R12>
+					<R20>-0.00797146931</R20>
+					<R21>0.999967694</R21>
+					<R22>0.000796248845</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastsShadows">true</bool>
+				<token name="Controller">0</token>
+				<bool name="ControllerFlagShown">true</bool>
+				<bool name="Cullable">true</bool>
+				<bool name="DraggingV1">false</bool>
+				<float name="Elasticity">0.5</float>
+				<token name="FormFactor">0</token>
+				<float name="Friction">0.300000012</float>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<string name="Name">Handle</string>
+				<float name="Reflectance">0</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<bool name="archivable">true</bool>
+				<token name="shape">0</token>
+				<Vector3 name="size">
+					<X>2</X>
+					<Y>2</Y>
+					<Z>2</Z>
+				</Vector3>
+			</Properties>
+			<Item class="SpecialMesh" referent="RBX9">
+				<Properties>
+					<Content name="MeshId"><url>rbxasset://fonts/timebomb.mesh</url></Content>
+					<token name="MeshType">5</token>
+					<string name="Name">Mesh</string>
+					<Vector3 name="Scale">
+						<X>1</X>
+						<Y>1</Y>
+						<Z>1</Z>
+					</Vector3>
+					<Content name="TextureId"><url>rbxasset://textures/bombtex.png</url></Content>
+					<Vector3 name="VertexColor">
+						<X>1</X>
+						<Y>1</Y>
+						<Z>1</Z>
+					</Vector3>
+					<bool name="archivable">true</bool>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Script" referent="RBX10">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">PlantBomb</string>
+				<string name="Source">local bombScript = script.Parent.Bomb&#13;&#10;local Tool = script.Parent&#13;&#10;local Bomb = Tool.Handle&#13;&#10;&#13;&#10;function plant()&#13;&#10;&#9;local bomb2 = Instance.new(&quot;Part&quot;)&#13;&#10;   &#13;&#10;&#9;local vCharacter = Tool.Parent&#13;&#10;&#9;local vPlayer = game.Players:playerFromCharacter(vCharacter)&#13;&#10;&#13;&#10;&#9;local spawnPos = Bomb.Position&#13;&#10;&#13;&#10;&#9;bomb2.Position = Vector3.new(spawnPos.x, spawnPos.y+3, spawnPos.z)&#13;&#10;&#9;bomb2.Size = Vector3.new(2,2,2)&#13;&#10;&#9;&#13;&#10;&#9;bomb2.BrickColor = BrickColor.new(21)&#13;&#10;&#9;bomb2.Shape = 0&#13;&#10;&#9;bomb2.BottomSurface = 0&#13;&#10;&#9;bomb2.TopSurface = 0&#13;&#10;&#9;bomb2.Reflectance = 1&#13;&#10;&#9;bomb2.Name = &quot;TimeBomb&quot;&#13;&#10;&#9;bomb2.Locked = true&#13;&#10;&#13;&#10;&#9;local creator_tag = Instance.new(&quot;ObjectValue&quot;)&#13;&#10;&#9;creator_tag.Value = vPlayer&#13;&#10;&#9;creator_tag.Name = &quot;creator&quot;&#13;&#10;&#9;creator_tag.Parent = bomb2&#13;&#10;&#13;&#10;&#9;bomb2.Parent = game.Workspace&#13;&#10;&#9;local new_script = bombScript:clone()&#13;&#10;&#9;new_script.Disabled = false&#13;&#10;&#9;new_script.Parent = bomb2&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;Tool.Enabled = true&#13;&#10;function onActivated()&#13;&#10;&#13;&#10;&#9;if not Tool.Enabled then&#13;&#10;&#9;&#9;return&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;Tool.Enabled = false&#13;&#10;&#13;&#10;&#9;local character = Tool.Parent;&#13;&#10;&#9;local humanoid = character.Humanoid&#13;&#10;&#9;if humanoid == nil then&#13;&#10;&#9;&#9;print(&quot;Humanoid not found&quot;)&#13;&#10;&#9;&#9;return &#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;local targetPos = humanoid.TargetPoint&#13;&#10;&#9;Bomb.Transparency = 1.0&#13;&#10;&#13;&#10;&#9;plant()&#13;&#10;&#13;&#10;&#9;wait(6)&#13;&#10;&#9;Bomb.Transparency = 0.0&#13;&#10;&#13;&#10;&#9;Tool.Enabled = true&#13;&#10;end&#13;&#10;&#13;&#10;function onUnequipped()&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;Tool.Activated:connect(onActivated)&#13;&#10;Tool.Unequipped:connect(onUnequipped)</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+		<Item class="Script" referent="RBX11">
+			<Properties>
+				<bool name="Disabled">true</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Bomb</string>
+				<string name="Source">local updateInterval = .4&#13;&#10;&#13;&#10;local currentColor = 1&#13;&#10;local colors = {26, 21} &#13;&#10;&#13;&#10;local ticksound = Instance.new(&quot;Sound&quot;)&#13;&#10;ticksound.SoundId = &quot;rbxasset://sounds\\clickfast.wav&quot;&#13;&#10;ticksound.Parent = script.Parent&#13;&#10;&#13;&#10;function update()&#13;&#10;&#9;updateInterval = updateInterval * .9&#13;&#10;&#9;script.Parent.BrickColor = BrickColor.new(colors[currentColor])&#13;&#10;&#9;currentColor = currentColor + 1&#13;&#10;&#9;if (currentColor &gt; 2) then currentColor = 1 end&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;function blowUp()&#13;&#10;&#9;local sound = Instance.new(&quot;Sound&quot;)&#13;&#10;&#9;&#9;sound.SoundId = &quot;rbxasset://sounds\\Rocket shot.wav&quot;&#13;&#10;&#9;&#9;sound.Parent = script.Parent&#13;&#10;&#9;&#9;sound.Volume = 1&#13;&#10;&#9;&#9;sound:play()&#13;&#10;&#9;explosion = Instance.new(&quot;Explosion&quot;)&#13;&#10;&#9;explosion.BlastRadius = 12&#13;&#10;&#9;explosion.BlastPressure = 1000000 -- these are really wussy units&#13;&#10;&#13;&#10;&#9;-- find instigator tag&#13;&#10;&#9;local creator = script.Parent:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;if creator ~= nil then&#13;&#10;&#9;&#9;explosion.Hit:connect(function(part, distance)  onPlayerBlownUp(part, distance, creator) end)&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;explosion.Position = script.Parent.Position&#13;&#10;&#9;explosion.Parent = game.Workspace&#13;&#10;&#9;script.Parent.Transparency = 1&#13;&#10;end&#13;&#10;&#13;&#10;function onPlayerBlownUp(part, distance, creator)&#13;&#10;&#9;if part.Name == &quot;Head&quot; then&#13;&#10;&#9;&#9;local humanoid = part.Parent.Humanoid&#13;&#10;&#9;&#9;tagHumanoid(humanoid, creator)&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;function tagHumanoid(humanoid, creator)&#13;&#10;&#9;-- tag does not need to expire iff all explosions lethal&#9;&#13;&#10;&#9;if creator ~= nil then&#13;&#10;&#9;&#9;local new_tag = creator:clone()&#13;&#10;&#9;&#9;new_tag.Parent = humanoid&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;function untagHumanoid(humanoid)&#13;&#10;&#9;if humanoid ~= nil then&#13;&#10;&#9;&#9;local tag = humanoid:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;&#9;if tag ~= nil then&#13;&#10;&#9;&#9;&#9;tag.Parent = nil&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;while updateInterval &gt; .1 do&#13;&#10;&#9;wait(updateInterval)&#13;&#10;&#9;update()&#9;&#13;&#10;&#9;ticksound:play()&#9;&#13;&#10;end&#13;&#10;&#13;&#10;blowUp()&#13;&#10;wait(2)&#13;&#10;script.Parent:remove()&#13;&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+		<Item class="LocalScript" referent="RBX12">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">MouseIcon</string>
+				<string name="Source">local MOUSE_ICON = &apos;rbxasset://textures/GunCursor.png&apos;&#10;local RELOADING_ICON = &apos;rbxasset://textures/GunWaitCursor.png&apos;&#10;&#10;local Tool = script.Parent&#10;&#10;local Mouse = nil&#10;&#10;local function UpdateIcon()&#10;&#9;if Mouse then&#10;&#9;&#9;Mouse.Icon = Tool.Enabled and MOUSE_ICON or RELOADING_ICON&#10;&#9;end&#10;end&#10;&#10;local function OnEquipped(mouse)&#10;&#9;Mouse = mouse&#10;&#9;UpdateIcon()&#10;end&#10;&#10;local function OnChanged(property)&#10;&#9;if property == &apos;Enabled&apos; then&#10;&#9;&#9;UpdateIcon()&#10;&#9;end&#10;end&#10;&#10;Tool.Equipped:connect(OnEquipped)&#10;Tool.Changed:connect(OnChanged)&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+	</Item>
+	<Item class="Tool" referent="RBX13">
+		<Properties>
+			<int name="ActivationState">0</int>
+			<int name="BackendToolState">1</int>
+			<bool name="Enabled">true</bool>
+			<CoordinateFrame name="Grip">
+				<X>-1</X>
+				<Y>-0.75</Y>
+				<Z>0.25</Z>
+				<R00>0</R00>
+				<R01>0</R01>
+				<R02>1</R02>
+				<R10>0</R10>
+				<R11>1</R11>
+				<R12>-0</R12>
+				<R20>-1</R20>
+				<R21>0</R21>
+				<R22>-0</R22>
+			</CoordinateFrame>
+			<string name="Name">RocketLauncher</string>
+			<Content name="TextureId"><url>rbxasset://Textures/Rocket.png</url></Content>
+			<bool name="archivable">true</bool>
+		</Properties>
+		<Item class="Sound" referent="RBX14">
+			<Properties>
+				<bool name="Looped">false</bool>
+				<string name="Name">Explosion</string>
+				<int name="PlayCount">-1</int>
+				<bool name="PlayOnRemove">false</bool>
+				<Content name="SoundId"><url>rbxasset://sounds/collide.wav</url></Content>
+				<float name="Volume">1</float>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+		<Item class="Sound" referent="RBX15">
+			<Properties>
+				<bool name="Looped">true</bool>
+				<string name="Name">Swoosh</string>
+				<int name="PlayCount">-1</int>
+				<bool name="PlayOnRemove">false</bool>
+				<Content name="SoundId"><url>rbxasset://sounds/Rocket whoosh 01.wav</url></Content>
+				<float name="Volume">0.699999988</float>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+		<Item class="Part" referent="RBX16">
+			<Properties>
+				<bool name="Anchored">false</bool>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<int name="BrickColor">199</int>
+				<CoordinateFrame name="CFrame">
+					<X>4.5</X>
+					<Y>2.79999995</Y>
+					<Z>-1</Z>
+					<R00>-0</R00>
+					<R01>0</R01>
+					<R02>1</R02>
+					<R10>-0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>-1</R20>
+					<R21>0</R21>
+					<R22>0</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastsShadows">true</bool>
+				<token name="Controller">0</token>
+				<bool name="ControllerFlagShown">true</bool>
+				<bool name="Cullable">true</bool>
+				<bool name="DraggingV1">false</bool>
+				<float name="Elasticity">0.5</float>
+				<token name="FormFactor">2</token>
+				<float name="Friction">0.300000012</float>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<string name="Name">Handle</string>
+				<float name="Reflectance">0.400000006</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<bool name="archivable">true</bool>
+				<token name="shape">1</token>
+				<Vector3 name="size">
+					<X>4</X>
+					<Y>0.800000012</Y>
+					<Z>1</Z>
+				</Vector3>
+			</Properties>
+			<Item class="SpecialMesh" referent="RBX17">
+				<Properties>
+					<Content name="MeshId"><url>rbxasset://../../../shareddata/fonts/12221651.mesh</url></Content>
+					<token name="MeshType">5</token>
+					<string name="Name">Mesh</string>
+					<Vector3 name="Scale">
+						<X>0.75</X>
+						<Y>0.75</Y>
+						<Z>0.75</Z>
+					</Vector3>
+					<Content name="TextureId"><url>rbxasset://../../../shareddata/textures/12224070.png</url></Content>
+					<Vector3 name="VertexColor">
+						<X>1</X>
+						<Y>1</Y>
+						<Z>1</Z>
+					</Vector3>
+					<bool name="archivable">true</bool>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="LocalScript" referent="RBX18">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Local Gui</string>
+				<string name="Source">local Tool = script.Parent;&#13;&#10;&#13;&#10;enabled = true&#13;&#10;function onButton1Down(mouse)&#13;&#10;&#9;if not enabled then&#13;&#10;&#9;&#9;return&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;enabled = false&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunWaitCursor.png&quot;&#13;&#10;&#13;&#10;&#9;wait(7)&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunCursor.png&quot;&#13;&#10;&#9;enabled = true&#13;&#10;&#13;&#10;end&#13;&#10;&#13;&#10;function onEquippedLocal(mouse)&#13;&#10;&#13;&#10;&#9;if mouse == nil then&#13;&#10;&#9;&#9;print(&quot;Mouse not found&quot;)&#13;&#10;&#9;&#9;return &#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunCursor.png&quot;&#13;&#10;&#9;mouse.Button1Down:connect(function() onButton1Down(mouse) end)&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;Tool.Equipped:connect(onEquippedLocal)&#13;&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+		<Item class="Script" referent="RBX19">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Server Launcher</string>
+				<string name="Source">local Rocket = Instance.new(&quot;Part&quot;)&#13;&#10;local Tool = script.Parent&#13;&#10;&#13;&#10;Rocket.Locked = true&#13;&#10;Rocket.BackSurface = 3&#13;&#10;Rocket.BottomSurface = 3&#13;&#10;Rocket.FrontSurface = 3&#13;&#10;Rocket.LeftSurface = 3&#13;&#10;Rocket.RightSurface = 3&#13;&#10;Rocket.TopSurface = 3&#13;&#10;Rocket.Size = Vector3.new(1,1,4)&#13;&#10;Rocket.BrickColor = BrickColor.new(23)&#13;&#10;&#13;&#10;Tool.RocketScript:clone().Parent = Rocket&#13;&#10;Tool.Explosion:clone().Parent = Rocket&#13;&#10;Tool.Swoosh:clone().Parent = Rocket&#13;&#10;&#13;&#10;&#13;&#10;function fire(vTarget)&#13;&#10;&#13;&#10;&#9;local vCharacter = Tool.Parent;&#13;&#10;&#9;&#13;&#10;&#9;local vHandle = Tool:findFirstChild(&quot;Handle&quot;)&#13;&#10;&#9;if vHandle == nil then&#13;&#10;&#9;&#9;print(&quot;Handle not found&quot;)&#13;&#10;&#9;&#9;return &#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;local dir = vTarget - vHandle.Position&#13;&#10;&#13;&#10;&#9;dir = computeDirection(dir)&#13;&#10;&#13;&#10;&#9;local missile = Rocket:clone()&#13;&#10;&#13;&#10;&#9;local pos = vHandle.Position + (dir * 6)&#13;&#10;&#9;&#13;&#10;&#9;--missile.Position = pos&#13;&#10;&#9;missile.CFrame = CFrame.new(pos,  pos + dir)&#13;&#10;&#13;&#10;&#9;local creator_tag = Instance.new(&quot;ObjectValue&quot;)&#13;&#10;&#13;&#10;&#9;local vPlayer = game.Players:playerFromCharacter(vCharacter)&#13;&#10;&#13;&#10;&#9;if vPlayer == nil then&#13;&#10;&#9;&#9;print(&quot;Player not found&quot;)&#13;&#10;&#9;else&#13;&#10;&#9;&#9;if (vPlayer.Neutral == false) then -- nice touch&#13;&#10;&#9;&#9;&#9;missile.BrickColor = vPlayer.TeamColor&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;creator_tag.Value =vPlayer&#13;&#10;&#9;creator_tag.Name = &quot;creator&quot;&#13;&#10;&#9;creator_tag.Parent = missile&#13;&#10;&#9;&#13;&#10;&#9;missile.RocketScript.Disabled = false&#13;&#10;&#13;&#10;&#9;missile.Parent = game.Workspace&#13;&#10;end&#13;&#10;&#13;&#10;function computeDirection(vec)&#13;&#10;&#9;local lenSquared = vec.magnitude * vec.magnitude&#13;&#10;&#9;local invSqrt = 1 / math.sqrt(lenSquared)&#13;&#10;&#9;return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)&#13;&#10;end&#13;&#10;&#13;&#10;Tool.Enabled = true&#13;&#10;function onActivated()&#13;&#10;&#9;if not Tool.Enabled then&#13;&#10;&#9;&#9;return&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;Tool.Enabled = false&#13;&#10;&#13;&#10;&#9;local character = Tool.Parent;&#13;&#10;&#9;local humanoid = character.Humanoid&#13;&#10;&#9;if humanoid == nil then&#13;&#10;&#9;&#9;print(&quot;Humanoid not found&quot;)&#13;&#10;&#9;&#9;return &#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;local targetPos = humanoid.TargetPoint&#13;&#10;&#13;&#10;&#9;fire(targetPos)&#13;&#10;&#13;&#10;&#9;wait(7)&#13;&#10;&#13;&#10;&#9;Tool.Enabled = true&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;script.Parent.Activated:connect(onActivated)&#13;&#10;&#13;&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+		<Item class="Script" referent="RBX20">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">RocketScript</string>
+				<string name="Source">r = game:service(&quot;RunService&quot;)&#13;&#10;&#13;&#10;shaft = script.Parent&#13;&#10;position = shaft.Position&#13;&#10;&#13;&#10;script.Parent.Explosion.PlayOnRemove = true -- play explosion sound when projectile removed from game&#13;&#10;&#13;&#10;function fly()&#13;&#10;&#9;direction = shaft.CFrame.lookVector &#13;&#10;&#9;position = position + direction&#13;&#10;&#9;error = position - shaft.Position&#13;&#10;&#9;shaft.Velocity = 7*error&#13;&#10;end&#13;&#10;&#13;&#10;function blow()&#13;&#10;&#9;swoosh:stop()&#13;&#10;&#9;explosion = Instance.new(&quot;Explosion&quot;)&#13;&#10;&#9;explosion.Position = shaft.Position&#13;&#10;&#13;&#10;&#13;&#10;&#9;-- find instigator tag&#13;&#10;&#9;local creator = script.Parent:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;if creator ~= nil then&#13;&#10;&#9;&#9;explosion.Hit:connect(function(part, distance)  onPlayerBlownUp(part, distance, creator) end)&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;explosion.Parent = game.Workspace&#13;&#10;&#9;connection:disconnect()&#13;&#10;&#9;wait(.1)&#13;&#10;&#9;shaft:remove()&#13;&#10;end&#13;&#10;&#13;&#10;function onPlayerBlownUp(part, distance, creator)&#13;&#10;&#9;&#13;&#10;&#9;if part.Name == &quot;Head&quot; then&#13;&#10;&#9;&#13;&#10;&#9;&#9;local humanoid = part.Parent.Humanoid&#13;&#10;&#9;&#9;tagHumanoid(humanoid, creator)&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;function tagHumanoid(humanoid, creator)&#13;&#10;&#9;-- tag does not need to expire iff all explosions lethal&#13;&#10;&#9;&#13;&#10;&#9;if creator ~= nil then&#13;&#10;&#9;&#9;local new_tag = creator:clone()&#13;&#10;&#9;&#9;new_tag.Parent = humanoid&#13;&#10;&#9;&#9;&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;function untagHumanoid(humanoid)&#13;&#10;&#9;if humanoid ~= nil then&#13;&#10;&#9;&#9;local tag = humanoid:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;&#9;if tag ~= nil then&#13;&#10;&#9;&#9;&#13;&#10;&#9;&#9;&#9;tag.Parent = nil&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;t, s = r.Stepped:wait()&#13;&#10;&#13;&#10;swoosh = script.Parent.Swoosh&#13;&#10;swoosh:play()&#13;&#10;&#13;&#10;d = t + 10.0 - s&#13;&#10;connection = shaft.Touched:connect(blow)&#13;&#10;&#13;&#10;while t &lt; d do&#13;&#10;&#9;fly()&#13;&#10;&#9;t = r.Stepped:wait()&#13;&#10;end&#13;&#10;&#13;&#10;-- at max range&#13;&#10;script.Parent.Explosion.PlayOnRemove = false&#13;&#10;swoosh:stop()&#13;&#10;shaft:remove()&#13;&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+	</Item>
+	<Item class="HopperBin" referent="RBX21">
+		<Properties>
+			<token name="BinType">0</token>
+			<string name="Name">Slingshot</string>
+			<Content name="TextureId" mimeType="image/png"><binary xmime:contentType="image/png">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
+SwAAAABJRU5ErkJggg==</binary></Content>
+			<bool name="archivable">true</bool>
+		</Properties>
+		<Item class="Part" referent="RBX22">
+			<Properties>
+				<bool name="Anchored">false</bool>
+				<float name="BackParamA">-0.5</float>
+				<float name="BackParamB">0.5</float>
+				<token name="BackSurface">0</token>
+				<token name="BackSurfaceInput">0</token>
+				<float name="BottomParamA">-0.5</float>
+				<float name="BottomParamB">0.5</float>
+				<token name="BottomSurface">0</token>
+				<token name="BottomSurfaceInput">0</token>
+				<int name="BrickColor">194</int>
+				<CoordinateFrame name="CFrame">
+					<X>0</X>
+					<Y>6.4000001</Y>
+					<Z>-8</Z>
+					<R00>1</R00>
+					<R01>0</R01>
+					<R02>0</R02>
+					<R10>0</R10>
+					<R11>1</R11>
+					<R12>0</R12>
+					<R20>0</R20>
+					<R21>0</R21>
+					<R22>1</R22>
+				</CoordinateFrame>
+				<bool name="CanCollide">true</bool>
+				<bool name="CastsShadows">true</bool>
+				<token name="Controller">0</token>
+				<bool name="ControllerFlagShown">true</bool>
+				<bool name="Cullable">true</bool>
+				<bool name="DraggingV1">false</bool>
+				<float name="Elasticity">0.5</float>
+				<token name="FormFactor">0</token>
+				<float name="Friction">0.300000012</float>
+				<float name="FrontParamA">-0.5</float>
+				<float name="FrontParamB">0.5</float>
+				<token name="FrontSurface">0</token>
+				<token name="FrontSurfaceInput">0</token>
+				<float name="LeftParamA">-0.5</float>
+				<float name="LeftParamB">0.5</float>
+				<token name="LeftSurface">0</token>
+				<token name="LeftSurfaceInput">0</token>
+				<bool name="Locked">false</bool>
+				<string name="Name">Pellet</string>
+				<float name="Reflectance">0</float>
+				<float name="RightParamA">-0.5</float>
+				<float name="RightParamB">0.5</float>
+				<token name="RightSurface">0</token>
+				<token name="RightSurfaceInput">0</token>
+				<Vector3 name="RotVelocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<float name="TopParamA">-0.5</float>
+				<float name="TopParamB">0.5</float>
+				<token name="TopSurface">0</token>
+				<token name="TopSurfaceInput">0</token>
+				<float name="Transparency">0</float>
+				<Vector3 name="Velocity">
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0</Z>
+				</Vector3>
+				<bool name="archivable">true</bool>
+				<token name="shape">0</token>
+				<Vector3 name="size">
+					<X>1</X>
+					<Y>1</Y>
+					<Z>1</Z>
+				</Vector3>
+			</Properties>
+			<Item class="Script" referent="RBX23">
+				<Properties>
+					<bool name="Disabled">true</bool>
+					<Content name="LinkedSource"><null></null></Content>
+					<string name="Name">PelletScript</string>
+					<string name="Source">pellet = script.Parent&#13;&#10;damage = 8&#13;&#10;&#13;&#10;function onTouched(hit)&#13;&#10;&#9;humanoid = hit.Parent:findFirstChild(&quot;Humanoid&quot;)&#13;&#10;&#9;if humanoid~=nil then&#13;&#10;&#9;&#9;tagHumanoid(humanoid)&#13;&#10;&#9;&#9;humanoid.Health = humanoid.Health - damage&#13;&#10;&#9;&#9;wait(2)&#13;&#10;&#9;&#9;untagHumanoid(humanoid)&#13;&#10;&#9;else&#13;&#10;&#9;&#9;damage = damage / 2&#13;&#10;&#9;&#9;if damage &lt; 0.1 then&#13;&#10;&#9;&#9;&#9;connection:disconnect()&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;function tagHumanoid(humanoid)&#13;&#10;&#9;-- todo: make tag expire&#13;&#10;&#9;local tag = pellet:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;if tag ~= nil then&#13;&#10;&#9;&#9;local new_tag = tag:clone()&#13;&#10;&#9;&#9;new_tag.Parent = humanoid&#13;&#10;&#9;&#9;&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;function untagHumanoid(humanoid)&#13;&#10;&#9;if humanoid ~= nil then&#13;&#10;&#9;&#9;local tag = humanoid:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;&#9;if tag ~= nil then&#13;&#10;&#9;&#9;&#9;&#13;&#10;&#9;&#9;&#9;tag.Parent = nil&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;connection = pellet.Touched:connect(onTouched)&#13;&#10;&#13;&#10;r = game:service(&quot;RunService&quot;)&#13;&#10;t, s = r.Stepped:wait()&#13;&#10;d = t + 2.0 - s&#13;&#10;while t &lt; d do&#13;&#10;&#9;t = r.Stepped:wait()&#13;&#10;end&#13;&#10;&#13;&#10;pellet.Parent = nil</string>
+					<bool name="archivable">true</bool>
+				</Properties>
+			</Item>
+		</Item>
+		<Item class="Script" referent="RBX24">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">Slingshot</string>
+				<string name="Source">print(&quot;Slingshot script loaded&quot;)&#13;&#10;&#13;&#10;bin = script.Parent&#13;&#10;VELOCITY = 85 -- constant&#13;&#10;&#13;&#10;function fire(mouse_pos)&#13;&#10;&#13;&#10;&#13;&#10;&#9;sound = Instance.new(&quot;Sound&quot;)&#13;&#10;&#9;&#9;sound.SoundId = &quot;rbxasset://sounds\\Rubber band sling shot.wav&quot;&#13;&#10;&#9;&#9;sound.Parent = script.Parent&#13;&#10;&#9;&#9;sound:play()&#13;&#10;&#13;&#10;-- find player&apos;s head pos&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;&#9;local head = game.Players.LocalPlayer.Character:findFirstChild(&quot;Head&quot;)&#13;&#10;&#9;if head == nil then return end&#13;&#10;&#13;&#10;&#9;local dir = mouse_pos - head.Position&#13;&#10;&#9;dir = computeDirection(dir)&#13;&#10;&#13;&#10;&#9;local launch = head.Position + 5 * dir&#13;&#10;&#13;&#10;&#9;local delta = mouse_pos - launch&#13;&#10;&#9;&#13;&#10;&#9;local dy = delta.y&#13;&#10;&#9;&#13;&#10;&#9;local new_delta = Vector3.new(delta.x, 0, delta.z)&#13;&#10;&#9;delta = new_delta&#13;&#10;&#13;&#10;&#9;local dx = delta.magnitude&#13;&#10;&#9;local unit_delta = delta.unit&#13;&#10;&#9;&#13;&#10;&#9;-- acceleration due to gravity in RBX units&#13;&#10;&#9;local g = (-9.81 * 20)&#13;&#10;&#13;&#10;&#9;local theta = computeLaunchAngle( dx, dy, g)&#13;&#10;&#13;&#10;&#9;local vy = math.sin(theta)&#13;&#10;&#9;local xz = math.cos(theta)&#13;&#10;&#9;local vx = unit_delta.x * xz&#13;&#10;&#9;local vz = unit_delta.z * xz&#13;&#10;&#9;&#13;&#10;&#13;&#10;&#9;local missile = script.Parent.Pellet:clone()&#13;&#10;        &#13;&#10;&#13;&#10;&#9;&#9;&#13;&#10;&#13;&#10;&#9;missile.Position = launch&#13;&#10;&#9;missile.Velocity = Vector3.new(vx,vy,vz) * VELOCITY&#13;&#10;&#13;&#10;&#9;print(&quot;Pos X:&quot;, launch.x, &quot;Y:&quot;, launch.y, &quot;Z:&quot;, launch.z)&#13;&#10;&#9;print(&quot;Vel X:&quot;, vx, &quot;Y:&quot;, vy, &quot;Z:&quot;, vz)&#13;&#10;&#13;&#10;&#9;missile.PelletScript.Disabled = false&#13;&#10;&#13;&#10;&#9;local creator_tag = Instance.new(&quot;ObjectValue&quot;)&#13;&#10;&#9;creator_tag.Value = game.Players.LocalPlayer&#13;&#10;&#9;creator_tag.Name = &quot;creator&quot;&#13;&#10;&#9;creator_tag.Parent = missile&#13;&#10;&#9;&#13;&#10;&#9;missile.Parent = game.Workspace&#13;&#10;&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;function computeLaunchAngle(dx,dy,grav)&#13;&#10;&#9;-- arcane&#13;&#10;&#9;-- http://en.wikipedia.org/wiki/Trajectory_of_a_projectile&#13;&#10;&#9;&#13;&#10;&#9;local g = math.abs(grav)&#13;&#10;&#9;local inRoot = (VELOCITY*VELOCITY*VELOCITY*VELOCITY) - (g * ((g*dx*dx) + (2*dy*VELOCITY*VELOCITY)))&#13;&#10;&#9;if inRoot &lt;= 0 then&#13;&#10;&#9;&#9;return .25 * math.pi&#13;&#10;&#9;end&#13;&#10;&#9;local root = math.sqrt(inRoot)&#13;&#10;&#9;local inATan1 = ((VELOCITY*VELOCITY) + root) / (g*dx)&#13;&#10;&#13;&#10;&#9;local inATan2 = ((VELOCITY*VELOCITY) - root) / (g*dx)&#13;&#10;&#9;local answer1 = math.atan(inATan1)&#13;&#10;&#9;local answer2 = math.atan(inATan2)&#13;&#10;&#9;if answer1 &lt; answer2 then return answer1 end&#13;&#10;&#9;return answer2&#13;&#10;end&#13;&#10;&#13;&#10;function computeDirection(vec)&#13;&#10;&#9;local lenSquared = vec.magnitude * vec.magnitude&#13;&#10;&#9;local invSqrt = 1 / math.sqrt(lenSquared)&#13;&#10;&#9;return Vector3.new(vec.x * invSqrt, vec.y * invSqrt, vec.z * invSqrt)&#13;&#10;end&#13;&#10;&#13;&#10;enabled = true&#13;&#10;function onButton1Down(mouse)&#13;&#10;&#9;if not enabled then&#13;&#10;&#9;&#9;return&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;enabled = false&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunWaitCursor.png&quot;&#13;&#10;&#13;&#10;&#9;-- find the best cf&#13;&#10;&#9;--local cf = mouse.Hit&#13;&#10;&#9;--local v = cf.lookVector&#13;&#10;&#13;&#10;&#9;local pos = mouse.Hit.p&#13;&#10;&#13;&#10;&#9;fire(pos)&#13;&#10;&#13;&#10;&#9;wait(.2)&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunCursor.png&quot;&#13;&#10;&#9;enabled = true&#13;&#10;&#13;&#10;end&#13;&#10;&#13;&#10;function onSelected(mouse)&#13;&#10;&#9;print(&quot;slingshot selected&quot;)&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunCursor.png&quot;&#13;&#10;&#9;mouse.Button1Down:connect(function() onButton1Down(mouse) end)&#13;&#10;end&#13;&#10;&#13;&#10;bin.Selected:connect(onSelected)&#13;&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+	</Item>
+	<Item class="HopperBin" referent="RBX25">
+		<Properties>
+			<token name="BinType">0</token>
+			<string name="Name">Superball</string>
+			<Content name="TextureId" mimeType="image/png"><binary xmime:contentType="image/png">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
+AABJRU5ErkJggg==</binary></Content>
+			<bool name="archivable">true</bool>
+		</Properties>
+		<Item class="Script" referent="RBX26">
+			<Properties>
+				<bool name="Disabled">false</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">CannonScript</string>
+				<string name="Source">print(&quot;Cannon script loaded&quot;)&#13;&#10;&#13;&#10;bin = script.Parent&#13;&#10;&#13;&#10;&#13;&#10;function fire(v)&#13;&#10;&#13;&#10;&#9;sound = Instance.new(&quot;Sound&quot;)&#13;&#10;&#9;sound.SoundId = &quot;rbxasset://sounds\\short spring sound.wav&quot;&#13;&#10;&#9;sound.Parent = script.Parent&#13;&#10;&#9;sound:play()&#13;&#10;&#13;&#10;&#9;local missile = Instance.new(&quot;Part&quot;)&#13;&#10;&#13;&#10;        &#13;&#10;&#13;&#10;&#9;local spawnPos = game.Players.LocalPlayer.Character.PrimaryPart.Position&#13;&#10;&#9;&#13;&#10;&#13;&#10;&#13;&#10;&#9;spawnPos  = spawnPos + (v * 5)&#13;&#10;&#13;&#10;&#9;missile.Position = spawnPos&#13;&#10;&#9;missile.Size = Vector3.new(2,2,2)&#13;&#10;&#9;missile.Velocity = v * 200&#13;&#10;&#9;missile.BrickColor = BrickColor.random() -- BrickColor.new(26)&#13;&#10;&#9;missile.Shape = 0&#13;&#10;&#9;missile.BottomSurface = 0&#13;&#10;&#9;missile.TopSurface = 0&#13;&#10;&#9;missile.Name = &quot;Cannon Shot&quot;&#13;&#10;&#9;missile.Elasticity = 1&#13;&#10;&#9;missile.Reflectance = .2&#13;&#10;&#9;missile.Friction = 0&#13;&#10;&#13;&#10;&#9;&#13;&#10;&#9;local new_script = script.Parent.CannonBall:clone()&#13;&#10;&#9;new_script.Disabled = false&#13;&#10;&#9;new_script.Parent = missile&#13;&#10;&#13;&#10;&#9;local creator_tag = Instance.new(&quot;ObjectValue&quot;)&#13;&#10;&#9;creator_tag.Value = game.Players.LocalPlayer&#13;&#10;&#9;creator_tag.Name = &quot;creator&quot;&#13;&#10;&#9;creator_tag.Parent = missile&#13;&#10;&#9;&#13;&#10;&#13;&#10;&#13;&#10;&#9;missile.Parent = game.Workspace&#13;&#10;&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;&#13;&#10;enabled = true&#13;&#10;function onButton1Down(mouse)&#13;&#10;&#9;if not enabled then&#13;&#10;&#9;&#9;return&#13;&#10;&#9;end&#13;&#10;&#13;&#10;&#9;enabled = false&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunWaitCursor.png&quot;&#13;&#10;&#13;&#10;&#9;-- find the best cf&#13;&#10;&#9;local cf = mouse.Hit&#13;&#10;&#9;local v = cf.lookVector&#13;&#10;&#13;&#10;&#9;fire(v)&#13;&#10;&#13;&#10;&#9;wait(2)&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunCursor.png&quot;&#13;&#10;&#9;enabled = true&#13;&#10;&#13;&#10;end&#13;&#10;&#13;&#10;function onSelected(mouse)&#13;&#10;&#9;print(&quot;cannon selected&quot;)&#13;&#10;&#9;mouse.Icon = &quot;rbxasset://textures\\GunCursor.png&quot;&#13;&#10;&#9;mouse.Button1Down:connect(function() onButton1Down(mouse) end)&#13;&#10;end&#13;&#10;&#13;&#10;bin.Selected:connect(onSelected)&#13;&#10;</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+		<Item class="Script" referent="RBX27">
+			<Properties>
+				<bool name="Disabled">true</bool>
+				<Content name="LinkedSource"><null></null></Content>
+				<string name="Name">CannonBall</string>
+				<string name="Source">ball = script.Parent&#13;&#10;damage = 25&#13;&#10;&#13;&#10;function onTouched(hit)&#13;&#10;&#9;local humanoid = hit.Parent:findFirstChild(&quot;Humanoid&quot;)&#13;&#10;&#9;if humanoid~=nil then&#13;&#10;&#9;&#9;tagHumanoid(humanoid)&#13;&#10;&#9;&#9;humanoid.Health = humanoid.Health - damage&#13;&#10;&#9;&#9;wait(2)&#13;&#10;&#9;&#9;untagHumanoid(humanoid)&#13;&#10;&#9;&#9;connection:disconnect()&#13;&#10;&#9;else&#13;&#10;&#9;&#9;damage = damage / 2&#13;&#10;&#9;&#9;if damage &lt; 0.1 then&#13;&#10;&#9;&#9;&#9;connection:disconnect()&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;function tagHumanoid(humanoid)&#13;&#10;&#9;-- todo: make tag expire&#13;&#10;&#9;local tag = ball:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;if tag ~= nil then&#13;&#10;&#9;&#9;local new_tag = tag:clone()&#13;&#10;&#9;&#9;new_tag.Parent = humanoid&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;&#13;&#10;function untagHumanoid(humanoid)&#13;&#10;&#9;if humanoid ~= nil then&#13;&#10;&#9;&#9;local tag = humanoid:findFirstChild(&quot;creator&quot;)&#13;&#10;&#9;&#9;if tag ~= nil then&#13;&#10;&#9;&#9;&#9;tag.Parent = nil&#13;&#10;&#9;&#9;end&#13;&#10;&#9;end&#13;&#10;end&#13;&#10;&#13;&#10;connection = ball.Touched:connect(onTouched)&#13;&#10;&#13;&#10;r = game:service(&quot;RunService&quot;)&#13;&#10;t, s = r.Stepped:wait()&#13;&#10;d = t + 10.0 - s&#13;&#10;while t &lt; d do&#13;&#10;&#9;t = r.Stepped:wait()&#13;&#10;end&#13;&#10;&#13;&#10;ball.Parent = nil</string>
+				<bool name="archivable">true</bool>
+			</Properties>
+		</Item>
+	</Item>
+</roblox>
